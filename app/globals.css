@@ -6,10 +6,30 @@
 }
 
 @theme inline {
+  --color-primary: #5534bf;
+  --color-primaryLight: #866ae3;
+  --font-inter: "interLight";
+  --font-montHair: "MontserratHairline";
+  --font-montMed: "montserratMedium";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+@font-face {
+  font-family: "MontserratHairline";
+  src: url("/assets/fonts/montserrat/Montserrat-Hairline.woff");
+}
+
+@font-face {
+  font-family: "interLight";
+  src: url("/assets/fonts/inter/Inter_18pt-Light.ttf") format(truetype);
+}
+
+@font-face {
+  font-family: "montserratMedium";
+  src: url("/assets/fonts/montserrat/Montserrat-Medium.woff");
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +39,379 @@
   }
 }
 
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.anicenter {
+  position: relative;
+  /* background-color: rgb(247, 247, 247); */
+  width: 10vh;
+  height: 15vh;
+  display: flex;
+  float: left;
+  /* justify-content: center; */
+  align-items: flex-end;
+  /* opacity: 0; */
+}
+
+.artwork {
+  transform-origin: 0;
+  animation-duration: 8000ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-name: anime;
+  /* animation: $animation-duration; */
+  /* opacity: 0; */
+}
+
+@keyframes anime {
+  /* 000% {
+    transform: translateY(0px);
+  } */
+
+  000% {
+    transform: rotate(10deg);
+  }
+  015% {
+    transform: rotate(-6deg);
+  }
+  025% {
+    transform: rotate(4deg);
+  }
+  030% {
+    transform: rotate(-2deg);
+  }
+
+  087% {
+    transform: translateY(0px);
+  }
+  089% {
+    transform: translateY(-15px);
+  }
+
+  092% {
+    transform: translateY(0px);
+  }
+
+  094% {
+    transform: translateY(-10px);
+  }
+  098% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+
+  /* 100% {
+    transform: translateY(-15px);
+  } */
+}
+
+.mouthopenblack,
+.teeth,
+.tongue {
+  transform-origin: 0;
+  /* animation: $animation-duration; */
+  animation-duration: 8000ms;
+  animation-timing-function: ease-in-out;
+  /* animation-iteration-count: infinite; */
+  animation-name: laughwithteeth;
+  /* display: none; */
+  opacity: 1;
+}
+
+@keyframes laughwithteeth {
+  000% {
+    opacity: 0;
+  }
+
+  085% {
+    opacity: 0;
+  }
+
+  087% {
+    opacity: 1;
+  }
+
+  092% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.eyesclosedR,
+.eyesclosedL {
+  transform-origin: 0;
+  animation-duration: 8000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: eyesclsoed;
+  opacity: 0;
+}
+
+@keyframes eyesclsoed {
+  000% {
+    opacity: 0;
+  }
+  008% {
+    opacity: 1;
+  }
+
+  050% {
+    opacity: 1;
+  }
+
+  053% {
+    opacity: 0;
+  }
+
+  055% {
+    opacity: 1;
+  }
+
+  058% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.irisR,
+.pupilR,
+.irisL,
+.pupilL {
+  transform-origin: 0;
+  animation-duration: 8000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: eyesopen;
+  opacity: 1;
+}
+
+@keyframes eyesopen {
+  000% {
+    opacity: 0;
+  }
+
+  050% {
+    opacity: 0;
+  }
+
+  053% {
+    opacity: 1;
+  }
+
+  055% {
+    opacity: 0;
+  }
+  058% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.smilecurve {
+  transform-origin: 0;
+  animation-duration: 8000ms;
+  animation-timing-function: ease-in-out;
+  animation-name: smilecurve;
+  opacity: 0;
+}
+
+@keyframes smilecurve {
+  000% {
+    opacity: 0;
+  }
+  077% {
+    opacity: 1;
+  }
+  085% {
+    opacity: 1;
+  }
+  086% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.projectSlide,
+.projectSlide2,
+.projectSlide3 {
+  transform-origin: 0;
+  animation-duration: 5000ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: --value(1);
+  animation-name: pSlide;
+}
+
+@keyframes pSlide {
+  000% {
+    transform: translateX(2000px);
+  }
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(30px);
+  }
+  60% {
+    transform: translateX(15px);
+  }
+}
+
+.projectSlide2 {
+  margin: 0 12px;
+  transform-origin: 0;
+  animation-duration: 5000ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: --value(1);
+  animation-name: pSlide2;
+}
+
+@keyframes pSlide2 {
+  000% {
+    transform: translateX(2000px);
+  }
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(2000px);
+  }
+  40% {
+    transform: translateX(30px);
+  }
+  60% {
+    transform: translateX(15px);
+  }
+}
+
+.projectSlide2 {
+  margin: 0 12px;
+  transform-origin: 0;
+  animation-duration: 5000ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: --value(1);
+  animation-name: pSlide2;
+}
+
+@keyframes pSlide2 {
+  000% {
+    transform: translateX(2000px);
+  }
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(2000px);
+  }
+  40% {
+    transform: translateX(30px);
+  }
+  60% {
+    transform: translateX(15px);
+  }
+}
+
+.projectSlide3 {
+  transform-origin: 0;
+  animation-duration: 5000ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: --value(1);
+  animation-name: pSlide3;
+}
+
+@keyframes pSlide3 {
+  000% {
+    transform: translateX(2000px);
+  }
+  30%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(2000px);
+  }
+  40% {
+    transform: translateX(30px);
+  }
+  60% {
+    transform: translateX(15px);
+  }
+}
+
+.projectSlide4 {
+  margin: 0 12px;
+  transform-origin: 0;
+  animation-duration: 5000ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: --value(1);
+  animation-name: pSlide4;
+}
+
+@keyframes pSlide4 {
+  000% {
+    transform: translateX(2000px);
+  }
+  37%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(2000px);
+  }
+  45% {
+    transform: translateX(30px);
+  }
+  70% {
+    transform: translateX(15px);
+  }
+}
+
+.projectPageBts {
+  color: black;
+  width: 90%;
+  display: flex;
+
+  align-items: center;
+
+  padding: 6px 6px 6px 6px;
+  border-radius: 30px;
+  transition: 200ms;
+}
+
+.projectPageBts:hover {
+  background-color: #5534bf;
+  color: #ffffff;
 }
