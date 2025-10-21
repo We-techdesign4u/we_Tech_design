@@ -3,7 +3,6 @@ import React from "react";
 import Image from "next/image";
 import { images } from "@/public/constant";
 import { useState } from "react";
-import Cards from "../components/cards";
 import { useStateContext } from "../context/StateContextProvider";
 import {
   AiOutlineClose,
@@ -22,6 +21,8 @@ import {
   AiOutlineCopy,
   AiOutlineCodeSandbox,
 } from "react-icons/ai";
+import { Cards } from "../components";
+import Link from "next/link";
 
 const Projects = () => {
   const { isOpen, setIsOpen, detailimages, setDetailImages } =
@@ -232,38 +233,56 @@ const Projects = () => {
         <div className="pt-[10dvh] pl-[5%]  bg-purple-100 h-screen w-[18%]">
           <div>
             <div className="font-montMed">
-              <a class="projectPageBts" href="/">
+              <Link
+                className="hover:bg-primary hover:text-white text-black w-[90%] items-center p-[6px] rounded-[30px] transition-[200ms] flex"
+                href="/"
+              >
                 Home
-              </a>
+              </Link>
             </div>
             <div className="font-montMed">
-              <a class="projectPageBts" href="/ContactUs">
+              <Link
+                className="hover:bg-primary hover:text-white text-black w-[90%] items-center p-[6px] rounded-[30px] transition-[200ms] flex"
+                href="/ContactUs"
+              >
                 Contact Us
-              </a>
+              </Link>
             </div>
             <h1 className="font-light mt-8">All Projects</h1>
             <div className="font-montMed">
-              <a class="projectPageBts flex" className="ml-2" href="">
-                <AiOutlineGlobal /> &nbsp; <p>Websites</p>
-              </a>
+              <Link
+                className="ml-2 hover:bg-primary hover:text-white text-black w-[90%] items-center p-[6px] rounded-[30px] transition-[200ms] flex"
+                href=""
+              >
+                <AiOutlineGlobal /> <p>&nbsp;Websites</p>
+              </Link>
             </div>
             <div className="font-montMed">
-              <a class="projectPageBts flex" className="ml-2" href="">
+              <Link
+                className="ml-2 hover:bg-primary hover:text-white text-black w-[90%] items-center p-[6px] rounded-[30px] transition-[200ms] flex"
+                href=""
+              >
                 <AiOutlineMobile />
-                &nbsp; <p>Mobile Apps</p>
-              </a>
+                <p> &nbsp;Mobile Apps</p>
+              </Link>
             </div>
             <div className="font-montMed">
-              <a class="projectPageBts flex" className="ml-2" href="">
+              <Link
+                className="ml-2 hover:bg-primary hover:text-white text-black w-[90%] items-center p-[6px] rounded-[30px] transition-[200ms] flex"
+                href=""
+              >
                 <AiOutlineCopy />
-                &nbsp; <p> Website Clones</p>
-              </a>
+                <p>&nbsp; Website Clones</p>
+              </Link>
             </div>
             <div className="font-montMed">
-              <a class="projectPageBts flex" className="ml-2" href="">
+              <Link
+                className="ml-2 hover:bg-primary hover:text-white text-black w-[90%] items-center p-[6px] rounded-[30px] transition-[200ms] flex"
+                href=""
+              >
                 <AiOutlineCodeSandbox />
-                &nbsp; <p> Others</p>
-              </a>
+                <p>&nbsp; Others</p>
+              </Link>
             </div>
           </div>
         </div>
