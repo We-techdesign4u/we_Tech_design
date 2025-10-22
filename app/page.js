@@ -173,8 +173,8 @@ export default function Home() {
                 Livecycle, Adobe Acrobat, e.t.c. <br />
                 <br />
                 My goal is to provide seamless, integrated solutions that not
-                only meet my clients' needs but also drive engagement and
-                achieve their business objectives.
+                only meet my clients needs but also drive engagement and achieve
+                their business objectives.
                 <span className="">
                   <Link className="text-blue-800" href="">
                     read more...

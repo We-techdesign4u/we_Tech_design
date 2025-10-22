@@ -6,10 +6,7 @@ import { useState } from "react";
 import { useStateContext } from "../context/StateContextProvider";
 import {
   AiOutlineClose,
-  AiOutlineSend,
   AiOutlineShareAlt,
-  AiOutlineTool,
-  AiTwotoneTool,
   AiOutlineHeart,
   AiOutlineBuild,
   AiOutlineWechatWork,
