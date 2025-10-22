@@ -4,7 +4,7 @@ import GetlinkedWeb from "../assets/images/GetlinkedWeb.jpg";
 import Getlinkedm from "../assets/images/getlinkedm.png";
 import Samaan from "../assets/images/Samaan.jpg";
 import Projects from "../assets/images/Projects.png";
-import logo from "../assets/images/Logo.png";
+
 import aeSamaan from "../assets/images/aesamaan.jpg";
 import Takapuna from "../assets/images/Takapuna.jpg";
 import sample from "../assets/images/sample.png";
@@ -25,7 +25,7 @@ export default {
   bg3,
   ecoommerce,
   Projects,
-  logo,
+
   GetlinkedWeb,
   Getlinkedm,
   Samaan,

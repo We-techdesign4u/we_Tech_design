@@ -246,31 +246,31 @@ export default function Home() {
           <div className=" -mt-[70px] -ml-10 overflow-clip -rotate-28 w-[990px] absolute flex ">
             <div class="projectSlide" className="flex">
               <div className=" mt-[390px] h-[370px] w-[225px] ">
-                <Image src={images.GetlinkedWeb} />
+                <Image alt="getlinkedweb" src={images.GetlinkedWeb} />
               </div>
             </div>
             <div class="projectSlide2" className=" mx-[12px]">
               <div className="h-[585px] mt-3 mb-[12px] w-[225px]">
-                <Image src={images.Takapuna} />
+                <Image alt="takapuna" src={images.Takapuna} />
               </div>
               <div className="h-[230px]  overflow-clip w-[225px]">
-                <Image src={images.Samaan} />
+                <Image alt="samman" src={images.Samaan} />
               </div>
             </div>
             <div class="projectSlide3" className="">
               <div className="h-[165px] w-[225px]  overflow-clip">
-                <Image src={images.ecoommerce} />
+                <Image alt="ecommerce" src={images.ecoommerce} />
               </div>
               <div className="h-[580px] my-[12px] overflow-clip w-[225px]">
-                <Image src={images.Getlinkedm} />
+                <Image alt="getlinkedm" src={images.Getlinkedm} />
               </div>
               <div className="h-[170px] w-[225px]">
-                <Image src={images.Takapuna} />
+                <Image alt="Takapuna" src={images.Takapuna} />
               </div>
             </div>
             <div class="projectSlide4" className="mx-[12px]">
               <div className="h-[500px] w-[225px] mt-17 mb-[12px] overflow-clip">
-                <Image className=" " src={images.Samaan} />
+                <Image alt="Samaan" className=" " src={images.Samaan} />
               </div>
               <div className="h-[100px] w-[225px] bg-blue-700"></div>
             </div>
