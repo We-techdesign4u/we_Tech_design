@@ -20,6 +20,8 @@ import getLinkedWeb4 from "../assets/images/getLinkedWeb4.jpg";
 import getLinkedWeb5 from "../assets/images/getLinkedWeb5.jpg";
 import logoblack from "../assets/images/logoblack.png";
 import logowhite from "../assets/images/logowhite.png";
+import line from "../assets/images/line.png";
+import plate from "../assets/images/plate.png";
 
 export default {
   bg3,
@@ -44,4 +46,6 @@ export default {
   getLinkedWeb5,
   logowhite,
   logoblack,
+  line,
+  plate,
 };
