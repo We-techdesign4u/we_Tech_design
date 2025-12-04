@@ -6,6 +6,8 @@ const context = createContext();
 export const StateContext = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [detailimages, setDetailImages] = useState([]);
+  const [permalink, setPermalink] = useState("");
+  const [weblink, setWeblink] = useState("");
 
   const handleImages = () => {
     setIsOpen(!isOpen);
@@ -18,6 +20,10 @@ export const StateContext = ({ children }) => {
         setIsOpen,
         detailimages,
         setDetailImages,
+        permalink,
+        setPermalink,
+        weblink,
+        setWeblink,
       }}
     >
       {children}

@@ -5,34 +5,22 @@ import { images } from "@/public/constant";
 import { useState } from "react";
 import { useStateContext } from "../context/StateContextProvider";
 
-const Cards = ({ web }) => {
-  const {
-    setIsOpen,
-    isOpen,
-    detailimages,
-    setDetailImages,
-    setPermalink,
-    setWeblink,
-  } = useStateContext();
-
+const MobileCards = ({ web }) => {
+  const { setIsOpen, isOpen, detailimages, setDetailImages } =
+    useStateContext();
   const details = () => {
     if (isOpen) {
       setIsOpen(!isOpen);
       setDetailImages([]);
-      setPermalink("");
-      setWeblink("");
     } else {
       setDetailImages(web.details);
-      setPermalink(web.permalink);
-      setWeblink(web.Github);
       setIsOpen(!isOpen);
     }
   };
 
   return (
     <div
-      //   key={index}
-      className="w-[240px] shadow-md box-border relative block h-[330px] cursor-pointer"
+      className="w-[330px] shadow-md box-border relative block h-[330px] cursor-pointer"
       //   href=""
       onClick={() => details()}
     >
@@ -40,7 +28,7 @@ const Cards = ({ web }) => {
         <Image
           // className="webtemplate"
           alt={web.alt}
-          className=" object-cover w-[full] h-[full] object-top transition-all duration-[3s] hover:object-bottom"
+          className=" object-cover w-[full] h-[full]"
           src={web.imageUrl}
         />
       </div>
@@ -51,4 +39,4 @@ const Cards = ({ web }) => {
   );
 };
 
-export default Cards;
+export default MobileCards;

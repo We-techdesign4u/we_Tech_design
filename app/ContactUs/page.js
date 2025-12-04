@@ -12,9 +12,9 @@ import { Formfield } from "../components";
 
 const ContactUs = () => {
   return (
-    <div className="bg-[url(/assets/images/bg3.png)] overflow-hidden bg-center bg-cover bg-no-repeat m-0 p-0">
-      <div className="h-[100vh] w-[100%] flex pl-[20dvh] py-[50px] items-center ">
-        <div className=" w-[550px] justify-center mr-[130px] block">
+    <div className="bg-[url(/assets/images/bg3.png)] sm:overflow-hidden bg-center bg-cover bg-no-repeat">
+      <div className="sm:h-[100vh] w-screen sm:flex sm:pl-[20dvh] px-5 py-[50px] items-center ">
+        <div className="sm:w-[550px] w-full justify-center mr-[130px] block">
           <Link
             href={"/"}
             className="w-10 h-10 flex justify-center absolute top-10 shadow-2xl items-center rounded-full bg-primary"
@@ -22,7 +22,7 @@ const ContactUs = () => {
             <AiFillHome size={20} color="white" />
           </Link>
 
-          <h2 className="font-montMed font-bold py-4 text-[30px]">
+          <h2 className="font-montMed font-bold sm:py-4 pt-8 text-[30px]">
             Get In Touch
           </h2>
           <p className="pb-4">
@@ -118,7 +118,7 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
-        <div className="w-[440px] flex items-center">
+        <div className="sm:w-[440px] w-full flex items-center">
           <form className=" p-[20px] bg-white rounded-[20px] shadow-2xl">
             <p>Send a Message</p>
             <Formfield

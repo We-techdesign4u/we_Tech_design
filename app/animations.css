@@ -11,7 +11,7 @@
 }
 
 .shadow {
-  fill:"#231f20";
+  fill: "#231f20";
   mix-blend-mode: multiply;
   opacity: 0.15;
 }
@@ -212,6 +212,3 @@
     opacity: 0;
   }
 }
-
-
-.
