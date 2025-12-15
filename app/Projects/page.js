@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { images } from "@/public/constant";
+import { images } from "../../public/constant";
 import { useState } from "react";
 import { useStateContext } from "../context/StateContextProvider";
 import {
@@ -19,7 +19,9 @@ import {
   AiOutlineCodeSandbox,
 } from "react-icons/ai";
 import { Cards } from "../components";
+import { SecCard } from "../components";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 const Projects = () => {
   const {
@@ -32,6 +34,7 @@ const Projects = () => {
   } = useStateContext();
 
   // console.log("pro", detailimages);
+  const { theme, setTheme } = useTheme();
 
   const hasImages = detailimages && detailimages.length > 0;
 
@@ -49,6 +52,10 @@ const Projects = () => {
       alt: "Ecommerce Store",
       permalink: "https://wetechdesignstore.netlify.app/",
       Github: "https://github.com/We-techdesign4u/Ecommerce-Store",
+      Desc: "An Ecommerce website template for bags, easy to update the products for noncoding clients",
+      Tools: ["React", "Sanity", "Taiwind"],
+      More: "3",
+      HashTag: ["#Ecommerce", "#Store", "#Published"],
     },
     {
       title: "GetLinked Website",
@@ -63,6 +70,10 @@ const Projects = () => {
       alt: "GetLinked Website",
       permalink: "https://we-techdesign4u.github.io/Getlinked/",
       Github: "https://github.com/We-techdesign4u/Getlinked",
+      Desc: "An hackathon challenge for young frontend developers on twitter",
+      Tools: ["HTML", "CSS", "JavaScript"],
+      More: "2",
+      HashTag: ["#hackathon", "#Challenge", "#Published"],
     },
     {
       title: "Samaan Website",
@@ -71,6 +82,10 @@ const Projects = () => {
       alt: "Samaan Website",
       permalink: "www.website.com",
       Github: "www.respository.com",
+      Desc: "Samaan Coachworks ~ This is a startup effort to redesign classic BMWs to the extent that Alpina and Hartge did. SAMAAN COACHWORKS is classic car “restomod” from the perspective of an Architect and Industrial Designer, with cars as the canvas for the artwork.",
+      Tools: ["HTML", "Canvas", "Taiwind"],
+      More: "2",
+      HashTag: ["#Car", "#Store", "#Draft"],
     },
     {
       title: "My Cakings Website",
@@ -85,6 +100,10 @@ const Projects = () => {
       alt: "My Cakings website",
       permalink: "https://mycakings.netlify.app/",
       Github: "https://github.com/We-techdesign4u/mycakings",
+      Desc: "An Ecommerce website template for any product, easy to update  for noncoding clients",
+      Tools: ["React", "Sanity", "Taiwind"],
+      More: "3",
+      HashTag: ["#Ecommerce", "#Store", "#Published"],
     },
     {
       title: "Art and History Website",
@@ -93,6 +112,10 @@ const Projects = () => {
       alt: "Art and History Website",
       permalink: "www.website.com",
       Github: "www.respository.com",
+      Desc: "An art and history website for individuals not interested in reading fiction. Reality provides richer characters and story lines",
+      Tools: ["React", "Sanity", "Taiwind"],
+      More: "2",
+      HashTag: ["#Ecommerce", "#Store", "#Draft"],
     },
     {
       title: "Takapuna Yatch Website",
@@ -101,6 +124,10 @@ const Projects = () => {
       alt: "Takapuna Yatch Website",
       permalink: "www.website.com",
       Github: "www.respository.com",
+      Desc: "A Yatch rental website, with the ability to book a yatch and make payment directly on the webpage",
+      Tools: ["Wordpress", "shopify", "css"],
+      More: "2",
+      HashTag: ["#Ecommerce", "#Store", "#Draft"],
     },
   ];
 
@@ -122,14 +149,10 @@ const Projects = () => {
       permalink:
         "https://expo.dev/preview/update?message=Update&updateRuntimeVersion=1.0.0&createdAt=2025-10-03T12%3A39%3A26.249Z&slug=exp&projectId=fc174b80-2beb-4059-97c4-379d5adf2fc2&group=fe0a7597-f8b9-48de-b3c2-6910dec08226",
       Github: "https://github.com/We-techdesign4u/Home_Hunt",
-    },
-    {
-      title: "GetLinked Website",
-      imageUrl: images.GetlinkedWeb,
-      details: [],
-      alt: "GetLinked Website",
-      permalink: "www.website.com",
-      Github: "www.respository.com",
+      Desc: "A Real Estate app with search and listing platform focused on providing a clean, responsive, and intuitive user experience ",
+      Tools: ["React", "Sanity", "Node.js"],
+      More: "2",
+      HashTag: ["#Ecommerce", "#Store", "#Published"],
     },
   ];
 
@@ -147,6 +170,10 @@ const Projects = () => {
       alt: "gmail clone",
       permalink: "https://we-techdesign4u.github.io/Gmail-Clone/",
       Github: "https://github.com/We-techdesign4u/Gmail-Clone",
+      Desc: "A pixel-perfect clone of the Gmail web application interface, meticulouly replicating its complex Ui",
+      Tools: ["React", "Sanity", "Taiwind"],
+      More: "2",
+      HashTag: ["#Ecommerce", "#Store", "#Published"],
     },
     {
       title: "Twitter Clone",
@@ -161,13 +188,29 @@ const Projects = () => {
       alt: "twiter clone",
       permalink: "https://mytwitterclonepage.netlify.app/",
       Github: "https://github.com/We-techdesign4u/Twitter_home_page",
+      Desc: "This clone twitter page showcases my mastery of modern frontend architecture, including efficient state management and responsive design.",
+      Tools: ["React", "Sanity", "Taiwind"],
+      More: "2",
+      HashTag: ["#Ecommerce", "#Store", "#Published"],
     },
   ];
 
+  const OtherData = [];
+  const defaultBt = [
+    { title: "Home", href: "/" },
+    { title: "Get In Touch", href: "/ContactUs" },
+  ];
+  const projectBt = [
+    { title: "Websites", href: "#web", icons: <AiOutlineGlobal /> },
+    { title: "Mobile Apps", href: "#app", icons: <AiOutlineMobile /> },
+    { title: "Website Clones", href: "#clone", icons: <AiOutlineCopy /> },
+    { title: "Other", href: "#other", icons: <AiOutlineCodeSandbox /> },
+  ];
+
   return (
-    <div className="flex w-screen">
+    <div className="flex w-screen bg-white dark:bg-black">
       {isOpen ? (
-        <div className="fixed z-20 w-screen h-screen flex sm:flex-row flex-col-reverse overflow-y-hidden bg-black">
+        <div className="fixed z-40 w-screen h-screen flex sm:flex-row flex-col-reverse overflow-y-hidden bg-black">
           <div className=" absolute z-30 flex sm:ml-[70px] sm:mt-[70px]">
             <div className=" sticky top-0 flex">
               <a
@@ -175,14 +218,14 @@ const Projects = () => {
                 className=" items-center mr-3 flex justify-center"
               >
                 <div className=" w-[130px] h-[30px] rounded-full opacity-75 bg-black mix-blend-multiply"></div>
-                <div className=" absolute flex items-center  text-white font-montMed text-[12px]">
+                <div className=" absolute flex items-center  text-white font-interV text-[12px]">
                   <AiOutlineLink />
                   <div className=" ml-2">Permalink</div>
                 </div>
               </a>
               <a href={weblink} className=" items-center flex justify-center">
                 <div className=" w-[100px] h-[30px] rounded-full opacity-75 bg-black mix-blend-multiply"></div>
-                <div className=" absolute flex items-center  text-white font-montMed text-[12px]">
+                <div className=" absolute flex items-center  text-white font-interV text-[12px]">
                   <AiOutlineGithub />
                   <div className=" ml-2">Github</div>
                 </div>
@@ -194,17 +237,17 @@ const Projects = () => {
               <div>
                 {detailimages?.map((detail, index) => (
                   <div key={index}>
-                    <Image alt="sample" src={detail} />
+                    <Image alt="sample" className="w-full" src={detail} />
                   </div>
                 ))}
               </div>
             ) : (
-              <div className=" bg-gray-700 w-full">
+              <div className=" bg-cyan-900 w-full">
                 <div className="opacity-80 w-full bg-black h-4">
                   <div className="bg-[url('/assets/images/line.png')] h-full w-"></div>
                 </div>
                 <p className=" text-center py-10 text-4xl sm:text-8xl font-montMed text-white font-black ">
-                  MEN AT <span className="text-amber-300">WORK</span>
+                  MEN AT <span className="text-amber-500">WORK</span>
                 </p>
                 <div className="relative">
                   <div className="sm:w-[60px] w-[25px] absolute bottom-[30%]  right-[36%]">
@@ -264,7 +307,7 @@ const Projects = () => {
                   </div>
                 </div>
                 <p className=" text-center py-10 text-2xl sm:text-8xl font-montMed text-white font-black ">
-                  UNDER <span className="text-amber-200">CONSTRUCTION</span>
+                  UNDER <span className="text-amber-500">CONSTRUCTION</span>
                 </p>
                 <div className="opacity-80 w-full bg-black h-4">
                   <div className="bg-[url('/assets/images/line.png')] h-full w-"></div>
@@ -327,90 +370,168 @@ const Projects = () => {
       ) : (
         <div></div>
       )}
-      <div className="flex sm:flex-row flex-col justify-between mr-15 h-screen w-full">
-        <div className=" relative bg-purple-100 h-screen w-screen block sm:w-[330px]">
-          <div className=" pt-[10dvh] fixed z-10 pb-2 w-full sm:w-[250px] bg-purple-100 sm:pl-20 pl-5 ">
-            <div className="font-montMed mb-2 ">
-              <Link
-                className="hover:bg-primary hover:text-white text-black items-center px-[10px] py-[6px] rounded-[30px] transition-[200ms]"
-                href="/"
-              >
-                Home
-              </Link>
+      <div className="flex  sm:flex-row flex-col text-gray-600 font-normal justify-between mr-15 h-screen w-full">
+        {/**Menu */}
+        <div className=" relative sm:border-r-[2px] sm:border-b-0 border-b-2 border-gray-200 bg-white dark:bg-black dark:border-gray-700 h-screen w-screen block sm:w-[350px]">
+          <div className=" pt-8 sm:pt-[10dvh] fixed z-30 pb-2 w-full sm:w-[280px]  sm:pl-20 pl-5 bg-white dark:bg-black">
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className=" sm:w-[100px] w-[60px] h-[140px] -mt-18   cursor-pointer absolute sm:right-[32%] right-[20%] z-50"
+            ></button>
+            {/**lamp */}
+            <div className="sm:w-full  w-[200px]  sm:h-[210px] h-[150px] overflow-x-clip  absolute -z-50 top-0 sm:left-0 right-0">
+              <div className=" relative h-full justify-items-center ">
+                <div className=" flex sm:h-full h-[110px] w-full overflow-clip relative">
+                  <div className="w-[300px] bottom-0 origin-bottom-right -left-[300px] absolute sm:rotate-45 rotate-55 z-10 h-[350px] bg-white sm:bg-LtBackground dark:bg-black flex"></div>
+                  <div className="w-[300px] bottom-0 origin-bottom-left -right-[300px] sm:-rotate-45 -rotate-55 absolute z-10   h-[350px] bg-white sm:bg-LtBackground dark:bg-black flex"></div>
+                </div>
+                <div className="absolute h-[80px] top-0 sm:h-[120px] z-5 w-[180px] bg-gray-600"></div>
+                <div className="sm:h-[140px] absolute top-0 h-[89px] sm:w-[40px] w-[20px] bg-amber-300 dark:bg-gray-800 dark:border-gray-700 dark:border-[2px] flex rounded-b-full "></div>
+
+                <div className="sm:w-[200px] w-[120px] h-[120px] -z-10 absolute top-0 sm:h-[200px] rounded-full bg-amber-100 dark:bg-transparent blur-[40px] sm:blur-[100px]"></div>
+              </div>
+              <div className="block absolute top-0 z-20  w-full justify-items-center">
+                <span className="h-[32px] sm:h-[59px] flex w-[3px] bg-gray-600"></span>
+                <span className="sm:w-[14px] w-[10px] h-[12px] sm:h-[20px] flex rounded-t-md bg-gray-400"></span>
+              </div>
             </div>
-            <div className="font-montMed">
-              <Link
-                className="hover:bg-primary hover:text-white text-black items-center px-[10px] py-[6px] rounded-[30px] transition-[200ms]"
-                href="/ContactUs"
-              >
-                Contact Us
-              </Link>
-            </div>
+
+            <div className="w-full sm:h-[120px] h-[0px]   "></div>
+            {defaultBt.map((btn, i) => (
+              <MenuBtns prop={btn} key={i} />
+            ))}
           </div>
-          <div className="sm:pl-[90px] pl-8 pt-[120px]">
-            <h1 className="font-light mt-8">All Projects</h1>
-            <div className="font-montMed mb-2">
-              <Link
-                className="ml-2 hover:bg-primary hover:text-white text-black items-center px-[10px] py-[6px] rounded-[30px]  inline-flex"
-                href=""
-              >
-                <AiOutlineGlobal /> <p>&nbsp;Websites</p>
-              </Link>
-            </div>
-            <div className="font-montMed mb-2">
-              <Link
-                className="ml-2 hover:bg-primary hover:text-white text-black items-center px-[10px] py-[6px] rounded-[30px]  inline-flex"
-                href=""
-              >
-                <AiOutlineMobile />
-                <p> &nbsp;Mobile Apps</p>
-              </Link>
-            </div>
-            <div className="font-montMed mb-2">
-              <Link
-                className="ml-2 hover:bg-primary hover:text-white text-black items-center px-[10px] py-[6px] rounded-[30px]  inline-flex"
-                href=""
-              >
-                <AiOutlineCopy />
-                <p>&nbsp;Website Clones</p>
-              </Link>
-            </div>
-            <div className="font-montMed mb-2">
-              <Link
-                className="ml-2 hover:bg-primary hover:text-white text-black items-center px-[10px] py-[6px] rounded-[30px]  inline-flex"
-                href=""
-              >
-                <AiOutlineCodeSandbox />
-                <p>&nbsp;Others</p>
-              </Link>
-            </div>
+          {/**Projects btn */}
+          <div className="sm:pl-[90px] text-gray-600 pl-8 pt-24 sm:pt-[270px]">
+            <p className=" mt-8 mb-4 font-interV text-gray-600 dark:text-white font-semibold">
+              All Projects
+            </p>
+            {projectBt.map((btn, i) => (
+              <MenuBtns prop={btn} key={i} />
+            ))}
           </div>
         </div>
-        <div className="w-full px-8 pb-[80px] relative sm:overflow-y-scroll pt-[10dvh]">
-          <p className=" font-montMed">Websties</p>
+        {/**Projects */}
+        <div className="w-full px-8 pb-[80px] relative bg-LtBackground sm:overflow-y-scroll pt-[10dvh]  dark:bg-black">
+          <div id="web">
+            <div className="sticky top-0 z-10 backdrop-blur-[50px]  py-4 px-8">
+              <p className=" text-2xl font-inter font-semibold dark:text-white text-gray-600">
+                Websites
+              </p>
+              <div className="py-3 gap-2 inline-flex ">
+                <button onClick={""}>
+                  <span className="px-4 py-2  bg-gray-100 dark:bg-gray-700 dark:text-white text-[13px] font-inter font-semibold rounded-sm">
+                    All
+                  </span>
+                </button>
+                <button onClick={""}>
+                  <span className="px-4 py-2 dark:text-white dark:hover:text-black  hover:bg-gray-100 text-[13px] font-inter font-semibold rounded-sm">
+                    Published
+                  </span>
+                </button>
+                <button onClick={""}>
+                  <span className="px-4 py-2 dark:text-white dark:hover:text-black hover:bg-gray-100 active:bg-gray-100 text-[13px] font-inter font-semibold rounded-sm">
+                    Draft
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div className="my-[5dvh] gap-[2rem] justify-items-center grid grid-cols-1 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+              {webData.map((web, index) => (
+                <SecCard web={web} key={index} />
+              ))}
+            </div>
+          </div>
+          <div id="app">
+            <div className="sticky top-0 z-10 backdrop-blur-[50px]  py-4 px-8">
+              <p className=" text-2xl font-inter font-semibold dark:text-white text-gray-600">
+                Mobile Apps
+              </p>
+              <div className="py-3 gap-2 inline-flex ">
+                <a href="">
+                  <span className="px-4 py-2  bg-gray-100 dark:bg-gray-700 dark:text-white text-[13px] font-inter font-semibold rounded-sm">
+                    All
+                  </span>
+                </a>
+                <a href="">
+                  <span className="px-4 py-2 dark:text-white dark:hover:text-black  hover:bg-gray-100 text-[13px] font-inter font-semibold rounded-sm">
+                    Published
+                  </span>
+                </a>
+                <a href="">
+                  <span className="px-4 py-2 dark:text-white dark:hover:text-black hover:bg-gray-100 active:bg-gray-100 text-[13px] font-inter font-semibold rounded-sm">
+                    Draft
+                  </span>
+                </a>
+              </div>
+            </div>
 
-          <div className="mt-[5dvh] gap-[2rem] justify-items-center grid grid-cols-1 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {webData.map((web, index) => (
-              <Cards web={web} key={index} />
-            ))}
+            <div className="my-[5dvh] gap-[2rem] justify-items-center grid grid-cols-1 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+              {mobileAppData.map((web, index) => (
+                <SecCard web={web} key={index} />
+              ))}
+            </div>
           </div>
-          <h1 className="pt-[50px] pb-[30px]">Mobile App</h1>
-          <div className="gap-[2rem] justify-items-center grid grid-cols-1 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {mobileAppData.map((app, index) => (
-              <Cards web={app} key={index} />
-            ))}
+
+          <div id="clone">
+            <div className="sticky top-0 z-10 backdrop-blur-[50px]  py-4 px-8">
+              <p className=" text-2xl font-inter font-semibold text-gray-600 dark:text-white">
+                Website Clones
+              </p>
+              <div className="py-3 gap-2 inline-flex ">
+                <a href="">
+                  <span className="px-4 py-2  bg-gray-100 dark:bg-gray-700 dark:text-white text-[13px] font-inter font-semibold rounded-sm">
+                    All
+                  </span>
+                </a>
+                <a href="">
+                  <span className="px-4 py-2 dark:text-white dark:hover:text-black  hover:bg-gray-100 text-[13px] font-inter font-semibold rounded-sm">
+                    Published
+                  </span>
+                </a>
+                <a href="">
+                  <span className="px-4 py-2 dark:text-white dark:hover:text-black hover:bg-gray-100 active:bg-gray-100 text-[13px] font-inter font-semibold rounded-sm">
+                    Draft
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <div className="my-[5dvh] gap-[2rem] justify-items-center grid grid-cols-1 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+              {CloneWebData.map((web, index) => (
+                <SecCard web={web} key={index} />
+              ))}
+            </div>
           </div>
-          <h1 className="pt-[50px] pb-[30px]">Website Clones</h1>
-          <div className=" gap-[2rem] justify-items-center grid grid-cols-1 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {CloneWebData.map((clone, index) => (
-              <Cards web={clone} key={index} />
-            ))}
-          </div>
-          <h1 className="pt-[50px] pb-[30px]">Other Designs</h1>
-          <div className=" gap-[2rem] justify-items-center grid grid-cols-1 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {CloneWebData.map((clone, index) => (
-              <Cards web={clone} key={index} />
-            ))}
+          <div id="other">
+            <div className="sticky top-0 z-10 backdrop-blur-[50px]  py-4 px-8">
+              <p className=" text-2xl  font-inter font-semibold text-gray-600 dark:text-white">
+                Other Designs
+              </p>
+              <div className="py-3 gap-2 inline-flex ">
+                <a href="">
+                  <span className="px-4 py-2  bg-gray-100 dark:bg-gray-700 dark:text-white text-[13px] font-inter font-semibold rounded-sm">
+                    All
+                  </span>
+                </a>
+                <a href="">
+                  <span className="px-4 py-2 dark:text-white dark:hover:text-black  hover:bg-gray-100 text-[13px] font-inter font-semibold rounded-sm">
+                    Published
+                  </span>
+                </a>
+                <a href="">
+                  <span className="px-4 py-2 dark:text-white dark:hover:text-black hover:bg-gray-100 active:bg-gray-100 text-[13px] font-inter font-semibold rounded-sm">
+                    Draft
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div className="my-[5dvh] gap-[2rem] justify-items-center grid grid-cols-1 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+              {OtherData.map((web, index) => (
+                <SecCard web={web} key={index} />
+              ))}
+              Coming Soon
+            </div>
           </div>
         </div>
       </div>
@@ -419,3 +540,17 @@ const Projects = () => {
 };
 
 export default Projects;
+
+export const MenuBtns = ({ prop }) => {
+  return (
+    <div className="sm:mb-2 pr-2">
+      <a
+        className="hover:bg-bgExlight dark:hover:bg-gray-800 dark:text-gray-100 dark:hover:text-gray-100 sm:w-full hover:text-primary text-gray-600  items-center px-[10px] py-[8px] rounded-[10px]  inline-flex"
+        href={prop.href}
+      >
+        {prop.icons}
+        <p className="text-[13px] font-interV">&nbsp;{prop.title}</p>
+      </a>
+    </div>
+  );
+};

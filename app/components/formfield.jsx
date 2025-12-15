@@ -9,45 +9,42 @@ const Formfield = ({
   value,
   onChange,
   fieldtype,
+  id,
 }) => {
   return (
     <div>
-      {fieldtype == "singleline" ? (
-        <div className=" items-center justify-center h-[48px] border-white my-[9px] py-1 px-4 bg-[#F4F5F9] rounded-[7px] ">
-          <p className="font-montMed text-[9px] text-[#939498]">{title}</p>
+      <div className=" items-center justify-center border-white mb-[24px] px-4 rounded-[7px] ">
+        <p className="font-interV text-[9px] text-gray-800 ">{title}</p>
 
-          <div className="w-full h-[25px] flex items-center">
+        <div className="w-full h-auto  bg-white rounded-[5px] px-[10px] flex items-center">
+          {fieldtype == "singleline" ? (
             <input
+              id={id}
+              name={id}
               title={title}
-              className="text-black p-0 m-0  font-montMed text-[11px] w-full h-full"
+              className="text-black p-0 m-0  font-interV text-[11px] w-full h-[34px]"
               type={type}
               placeholder={placeholder}
               //   placeholderTextColor="#7b7b8d"
 
-              keyboardType={keyboardType}
               value={value}
               onChange={onChange}
             />
-          </div>
-        </div>
-      ) : (
-        <div className=" my-[9px] py-1 px-4 bg-[#F4F5F9] rounded-[7px] flex flex-col">
-          <p className="font-montMed text-[9px] text-[#939498]">{title}</p>
-          <div className="justify-start w-full h-full items-center pb-1 flex-row">
+          ) : (
             <textarea
+              name={id}
+              id={id}
               title={title}
-              className="min-h-[36px] flex-1 text-black p-0 m-0 font-montMed text-[11px] border-0 w-full h-full"
+              className="min-h-[100px] flex-1 text-black py-[7px] font-interV text-[11px] border-0 w-full h-full"
               type={type}
               placeholder={placeholder}
-              //   placeholderTextColor="#7b7b8d"
-              keyboardType={keyboardType}
               value={value}
               onChange={onChange}
               aria-multiline="true"
             />
-          </div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 };

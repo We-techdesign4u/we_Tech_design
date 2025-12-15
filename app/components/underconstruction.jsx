@@ -1,6 +1,7 @@
 import React from "react";
-import { images } from "@/public/constant";
+
 import Image from "next/image";
+import { images } from "../../public/constant";
 
 const Underconstruction = () => {
   return (

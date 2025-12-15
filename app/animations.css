@@ -212,3 +212,57 @@
     opacity: 0;
   }
 }
+
+/**/
+
+.hi {
+  opacity: 0;
+  animation: hi 2s linear infinite;
+}
+
+@keyframes hi {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  /* The text slowly disappears at 180deg */
+  50% {
+    transform: rotate(180deg) scale(1);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(360deg) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes letterTransform {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(var(--translate-x), var(--translate-y)) rotate(360deg)
+      scale(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(var(--final-x), 0px) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
