@@ -207,6 +207,20 @@ const Projects = () => {
     { title: "Other", href: "#other", icons: <AiOutlineCodeSandbox /> },
   ];
 
+  const MenuBtns = ({ prop }) => {
+    return (
+      <div className="lg:mb-2 pr-2">
+        <a
+          className="hover:bg-bgExlight dark:hover:bg-gray-800 dark:text-gray-100 dark:hover:text-gray-100 lg:w-full hover:text-primary text-gray-600  items-center px-[10px] py-[8px] rounded-[10px]  inline-flex"
+          href={prop.href}
+        >
+          {prop.icons}
+          <p className="text-[13px] font-interV">&nbsp;{prop.title}</p>
+        </a>
+      </div>
+    );
+  };
+
   return (
     <div className="flex w-screen bg-white dark:bg-black">
       {isOpen ? (
@@ -427,21 +441,21 @@ const Projects = () => {
                 Websites
               </p>
               <div className="py-3 gap-2 inline-flex ">
-                <button onClick={""}>
+                <a href="">
                   <span className="px-4 py-2  bg-gray-100 dark:bg-gray-700 dark:text-white text-[13px] font-inter font-semibold rounded-sm">
                     All
                   </span>
-                </button>
-                <button onClick={""}>
+                </a>
+                <a href="">
                   <span className="px-4 py-2 dark:text-white dark:hover:text-black  hover:bg-gray-100 text-[13px] font-inter font-semibold rounded-sm">
                     Published
                   </span>
-                </button>
-                <button onClick={""}>
+                </a>
+                <a href="">
                   <span className="px-4 py-2 dark:text-white dark:hover:text-black hover:bg-gray-100 active:bg-gray-100 text-[13px] font-inter font-semibold rounded-sm">
                     Draft
                   </span>
-                </button>
+                </a>
               </div>
             </div>
             <div className="my-[5dvh] gap-[2rem] justify-items-center grid grid-cols-1  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4">
@@ -548,17 +562,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-export const MenuBtns = ({ prop }) => {
-  return (
-    <div className="lg:mb-2 pr-2">
-      <a
-        className="hover:bg-bgExlight dark:hover:bg-gray-800 dark:text-gray-100 dark:hover:text-gray-100 lg:w-full hover:text-primary text-gray-600  items-center px-[10px] py-[8px] rounded-[10px]  inline-flex"
-        href={prop.href}
-      >
-        {prop.icons}
-        <p className="text-[13px] font-interV">&nbsp;{prop.title}</p>
-      </a>
-    </div>
-  );
-};
