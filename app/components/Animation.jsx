@@ -8,7 +8,7 @@ export default function Animation() {
   const ganiyu = "Ganiyu".split("");
 
   return (
-    <div className="flex h-screen w-screen items-center justify-center bg-[url(/assets/images/bg3.png)] bg-cover bg-center bg-no-repeat font-extrabold text-6xl sm:overflow-hidden">
+    <div className="flex h-screen w-screen items-center justify-center bg-[url(/assets/images/bg3.png)] bg-cover bg-center bg-no-repeat font-extrabold text-6xl lg:overflow-hidden">
       <div className="relative w-full h-full flex justify-center items-center ">
         {/* Stage 1: “Hi, my” */}
         <motion.div
@@ -125,7 +125,7 @@ export default function Animation() {
         {/* Stage 4 & 5: Frontend + Developer */}
         <div className=" flex flex-col absolute  ">
           <motion.div
-            className="text-Black sm:text-[6rem] text-[3rem] font-playfair relative leading-none perspective-[500px]"
+            className="text-Black lg:text-[6rem] text-[3rem] font-playfair relative leading-none perspective-[500px]"
             style={{ display: "inline-block", transformOrigin: "50% 100%" }}
             initial={{ rotateX: 120, opacity: 0 }}
             animate={{ rotateX: 0, opacity: 1 }}
@@ -142,7 +142,7 @@ export default function Animation() {
           </motion.div>
 
           <motion.div
-            className="text-[#2A004D]  sm:text-[3.5rem] text-[1.8rem] font-playfair font-normal leading-none perspective-[500px] "
+            className="text-[#2A004D]  lg:text-[3.5rem] text-[1.8rem] font-playfair font-normal leading-none perspective-[500px] "
             style={{ display: "inline-block", transformOrigin: "50% 100%" }}
             initial={{ rotateX: 120, opacity: 0 }}
             animate={{ rotateX: 0, opacity: 1 }}
@@ -158,7 +158,7 @@ export default function Animation() {
             <p>Web&App-Developer</p>
           </motion.div>
           <motion.div
-            className="flex justify-between items-center flex-row absolute  sm:right-3 sm:top-3 right-1 top-1  sm:w-[100px] w-[60px] sm:h-[80px] h-[50px] "
+            className="flex justify-between items-center flex-row absolute  lg:right-3 lg:top-3 right-1 top-1  lg:w-[100px] w-[60px] lg:h-[80px] h-[50px] "
             initial={{ scale: 1, opacity: 0 }}
             animate={{
               scale: [1, 1.3, 1],
@@ -168,8 +168,8 @@ export default function Animation() {
               delay: 5,
             }}
           >
-            <div className="p-1  justify-center h-auto sm:w-[32px]  w-[20px] flex flex-col">
-              <div className=" overflow-clip -mb-[3px] sm:w-[30px] w-[20px] h-[6px] flex justify-center items-end -rotate-45 origin-left">
+            <div className="p-1  justify-center h-auto lg:w-[32px]  w-[20px] flex flex-col">
+              <div className=" overflow-clip -mb-[3px] lg:w-[30px] w-[20px] h-[6px] flex justify-center items-end -rotate-45 origin-left">
                 <motion.span
                   initial={{ x: 32 }}
                   animate={{ x: 0 }}
@@ -177,7 +177,7 @@ export default function Animation() {
                   className=" bg-amber-100 w-full h-[4px]"
                 ></motion.span>
               </div>
-              <div className="overflow-clip  sm:w-[30px] w-[20px] h-[6px] -mt-[3px] flex rotate-45 origin-left ">
+              <div className="overflow-clip  lg:w-[30px] w-[20px] h-[6px] -mt-[3px] flex rotate-45 origin-left ">
                 <motion.span
                   initial={{ x: -32 }}
                   animate={{ x: 0 }}
@@ -186,8 +186,8 @@ export default function Animation() {
                 ></motion.span>
               </div>
             </div>
-            <div className=" flex justify-center items-center  h-full w-[20px] sm:w-[30px]">
-              <div className="flex sm:h-[80px] h-[50px] w-[8px] justify-center items-center overflow-clip rotate-25">
+            <div className=" flex justify-center items-center  h-full w-[20px] lg:w-[30px]">
+              <div className="flex lg:h-[80px] h-[50px] w-[8px] justify-center items-center overflow-clip rotate-25">
                 <motion.span
                   initial={{ y: 82 }}
                   animate={{ y: 0 }}
@@ -198,7 +198,7 @@ export default function Animation() {
             </div>
 
             <div className=" justify-center  h-auto w-[32px] flex flex-col">
-              <div className=" overflow-clip -mb-[3px] sm:w-[30px] w-[20px] h-[6px] flex justify-center items-end rotate-45 origin-right">
+              <div className=" overflow-clip -mb-[3px] lg:w-[30px] w-[20px] h-[6px] flex justify-center items-end rotate-45 origin-right">
                 <motion.span
                   initial={{ x: 32 }}
                   animate={{ x: 0 }}
@@ -207,7 +207,7 @@ export default function Animation() {
                 ></motion.span>
               </div>
 
-              <div className=" overflow-clip sm:w-[30px] w-[20px] h-[6px] -mt-[3px] flex -rotate-45 origin-right ">
+              <div className=" overflow-clip lg:w-[30px] w-[20px] h-[6px] -mt-[3px] flex -rotate-45 origin-right ">
                 <motion.span
                   initial={{ x: -32 }}
                   animate={{ x: 0 }}

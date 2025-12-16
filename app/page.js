@@ -2,11 +2,7 @@
 import Image from "next/image";
 import { images } from "../public/constant";
 import Link from "next/link";
-import {
-  AiOutlineShoppingCart,
-  AiOutlineUser,
-  AiFillCloseCircle,
-} from "react-icons/ai";
+
 import { useEffect, useState } from "react";
 import { Animation, GDButton } from "./components";
 import { motion } from "framer-motion";
@@ -34,19 +30,19 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-[url(/assets/images/bg3.png)] sm:overflow-hidden  bg-center bg-cover bg-no-repeat m-0 p-0">
+    <div className="bg-[url(/assets/images/bg3.png)] lg:overflow-hidden bg-center bg-cover bg-no-repeat m-0 p-0">
       {playAnimation && <Animation />}
       {showLanding && (
-        <div className="flex flex-col-reverse sm:flex-row sm:h-[100vh] w-screen justify-center">
-          <div className=" pt-[4dvh] sm:pt-[10dvh] pl-5 pr-5 sm:pl-[20dvh] pb-[3dvh] flex flex-row items-end sm:h-[100vh] box-border ">
+        <div className="flex flex-col-reverse lg:flex-row lg:h-[100vh] w-screen justify-center">
+          <div className="w-screen overflow-hidden  lg:w-auto lg:max-w-[800px] pt-[4dvh] lg:pt-[10dvh] pl-5 pr-5 lg:pl-[20dvh] pb-[3dvh] flex flex-row justify-center items-end lg:h-[100vh] ">
             <motion.div
               initial={{ y: 30 }}
               animate={{ y: [30, 0], opacity: [0, 1] }}
               transition={{ duration: 1 }}
-              className=""
+              className="w-full"
             >
               {/*Logo */}
-              <div className="w-full flex justify-center sm:justify-start">
+              <div className="w-full flex justify-center lg:justify-start">
                 <a href="http://">
                   <Image
                     className="h-[12dvh] w-auto"
@@ -57,18 +53,15 @@ export default function Home() {
               </div>
 
               {/*welcome */}
-              <div
-                // class="welcome"
-                className="p-0 w-full justify-center sm:justify-start flex flex-row"
-              >
+              <div className="p-0 w-full justify-center lg:justify-start flex flex-row">
                 <div>
-                  <p className="text-gray-800 sm:text-[15dvh] text-[10dvh] sm:leading-[15dvh] leading-[10dvh]  font-montHair">
+                  <p className="text-gray-800 lg:text-[15dvh] text-[8dvh] lg:leading-[15dvh] leading-[10dvh]  font-montHair">
                     Welc
                   </p>
                 </div>
                 <div
                   // class="anicenter"
-                  className=" relative sm:w-[10vh] sm:h-[15vh] h-[10vh] w-[7vh] flex float-left items-end"
+                  className=" relative lg:w-[10vh] lg:h-[15vh] h-[10vh] w-[7vh] flex float-left items-end"
                 >
                   <svg class="artwork" viewBox="0 0 91.12 91.12">
                     <g style={{ isolation: "isolate" }}>
@@ -182,27 +175,24 @@ export default function Home() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-gray-800 sm:text-[15dvh] text-[10dvh] leading-[10dvh] sm:leading-[15dvh] font-montHair">
+                  <p className="text-gray-800 lg:text-[15dvh] text-[8dvh] leading-[10dvh] lg:leading-[15dvh] font-montHair">
                     me
                   </p>
                 </div>
               </div>
               {/*about */}
-              <div
-                // class="aboutMe"
-                className="sm:w-[87dvh] w-full pt-5"
-              >
-                <p className=" text-gray-800 text-center sm:text-left font-bricolage pt-11 pb-4 font-bold text-5xl">
+              <div className="lg:w-[87dvh] w-full pt-5">
+                <p className=" text-gray-800 text-center lg:text-left font-bricolage pt-11 pb-4 font-bold text-5xl">
                   I'm Gani
                 </p>
-                <p className="sm:text-left text-gray-800 text-center text-[18px] font-bricolage">
+                <p className="lg:text-left text-gray-800 text-center text-[18px] font-bricolage">
                   A Frontend Developer & Graphic Designer <br></br>8+ years in
                   design, 1+ years building fast web & mobile apps. <br></br>One
                   person who can design it, code it, and ship it.
                 </p>
               </div>
               {/*buttons */}
-              <div className="flex flex-row gap-3 sm:justify-start justify-center">
+              <div className="flex flex-row gap-3 lg:justify-start justify-center">
                 <GDButton
                   title={"Projects..."}
                   withicon={"false"}
@@ -215,7 +205,7 @@ export default function Home() {
                 />
               </div>
               {/*icons */}
-              <div className="w-full sm:justify-start justify-center flex">
+              <div className="w-full lg:justify-start justify-center flex">
                 <div className="w-[130px] flex h-[30px] my-[30px] items-center box-border justify-between">
                   <a href="https://github.com/">
                     <svg
@@ -262,9 +252,8 @@ export default function Home() {
             </motion.div>
           </div>
           {/**images */}
-          <div className=" w-full relative overflow-clip h-[400px] sm:h-full -mr-[12dvh] sm:mask-none mask-b-from-20% mask-b-to-90% ">
-            <div className="absolute z-10 w-full bottom-0 h-[10rem]  blur-lg  "></div>
-            <div className=" sm:-mt-[70px] -mt-14 sm:-ml-0 ml-[50px] overflow-clip -rotate-28 sm:w-[990px] w-full absolute flex ">
+          <div className="  w-full lg:max-w-[900px] relative overflow-clip h-[400px] lg:h-full -mr-[12dvh] lg:mask-none mask-b-from-20% mask-b-to-90% ">
+            <div className=" lg:-mt-[70px] -mt-14 lg:-ml-0 ml-[50px] flex overflow-clip -rotate-28 lg:w-[990px] w-full  absolute ">
               <motion.div
                 initial={{ x: 800 }}
                 animate={{ x: [800, -5, 10, 0] }}
@@ -272,7 +261,7 @@ export default function Home() {
                 // class="projectSlide"
                 className="flex"
               >
-                <div className=" sm:mt-[390px] mt-[150px] sm:h-[370px] sm:w-[225px] ">
+                <div className=" lg:mt-[390px] mt-[150px] lg:h-[370px] lg:w-[225px] ">
                   <Image alt="getlinkedweb" src={images.GetlinkedWeb} />
                 </div>
               </motion.div>
@@ -283,10 +272,10 @@ export default function Home() {
                 //  class="projectSlide2"
                 className=" mx-[12px]"
               >
-                <div className="sm:h-[585px] mt-3 mb-[12px] sm:w-[225px]">
+                <div className="lg:h-[585px] mt-3 mb-[12px] lg:w-[225px]">
                   <Image alt="takapuna" src={images.Takapuna} />
                 </div>
-                <div className="sm:h-[230px]  overflow-clip sm:w-[225px]">
+                <div className="lg:h-[420px]  overflow-clip lg:w-[225px]">
                   <Image alt="samman" src={images.Samaan} />
                 </div>
               </motion.div>
@@ -297,13 +286,13 @@ export default function Home() {
                 //  class="projectSlide3"
                 className=""
               >
-                <div className="sm:h-[165px] sm:w-[225px]  overflow-clip">
+                <div className="lg:h-[165px] lg:w-[225px]  overflow-clip">
                   <Image alt="ecommerce" src={images.ecoommerce} />
                 </div>
-                <div className="sm:h-[580px] my-[12px] overflow-clip sm:w-[225px]">
+                <div className="lg:h-[580px] my-[12px] overflow-clip lg:w-[225px]">
                   <Image alt="getlinkedm" src={images.Getlinkedm} />
                 </div>
-                <div className="sm:h-[170px] sm:w-[225px]">
+                <div className="lg:h-[270px] lg:w-[225px]">
                   <Image alt="Takapuna" src={images.Takapuna} />
                 </div>
               </motion.div>
@@ -314,10 +303,10 @@ export default function Home() {
                 //  class="projectSlide4"
                 className="mx-[12px]"
               >
-                <div className="sm:h-[500px] sm:w-[225px] mt-17 mb-[12px] overflow-clip">
+                <div className="lg:h-[500px] lg:w-[225px] mt-17 mb-[12px] overflow-clip">
                   <Image alt="Samaan" className=" " src={images.Samaan} />
                 </div>
-                <div className="h-[150px] sm:w-[225px] bg-blue-700"></div>
+                <div className="h-[450px] lg:w-[225px] bg-blue-700"></div>
               </motion.div>
             </div>
           </div>

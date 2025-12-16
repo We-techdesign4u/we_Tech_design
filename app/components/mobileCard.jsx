@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { images } from "@/public/constant";
+import { images } from "../../public/constant";
 import { useState } from "react";
 import { useStateContext } from "../context/StateContextProvider";
 

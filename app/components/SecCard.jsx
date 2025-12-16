@@ -1,10 +1,8 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { images } from "@/public/constant";
-import { useState } from "react";
+
 import { useStateContext } from "../context/StateContextProvider";
-import { AiOutlineFolderOpen } from "react-icons/ai";
 
 const SecCard = ({ web }) => {
   const {
@@ -32,7 +30,7 @@ const SecCard = ({ web }) => {
 
   return (
     <div
-      className="sm:w-[340px] border-[1px] dark:border-gray-700 dark:bg-gray-900 border-gray-100 text-gray-700 w-full rounded-2xl shadow-md box-border relative block h-[430px] cursor-pointer"
+      className="lg:w-[340px] border-[1px] dark:border-gray-700 dark:bg-gray-900 border-gray-100 text-gray-700 w-full rounded-2xl shadow-md box-border relative block h-[430px] cursor-pointer"
       //   href=""
       onClick={() => details()}
     >

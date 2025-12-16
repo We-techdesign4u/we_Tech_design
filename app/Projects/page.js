@@ -18,9 +18,9 @@ import {
   AiOutlineCopy,
   AiOutlineCodeSandbox,
 } from "react-icons/ai";
-import { Cards } from "../components";
+
 import { SecCard } from "../components";
-import Link from "next/link";
+
 import { useTheme } from "next-themes";
 
 const Projects = () => {
@@ -210,159 +210,164 @@ const Projects = () => {
   return (
     <div className="flex w-screen bg-white dark:bg-black">
       {isOpen ? (
-        <div className="fixed z-40 w-screen h-screen flex sm:flex-row flex-col-reverse overflow-y-hidden bg-black">
-          <div className=" absolute z-30 flex sm:ml-[70px] sm:mt-[70px]">
-            <div className=" sticky top-0 flex">
-              <a
-                href={permalink}
-                className=" items-center mr-3 flex justify-center"
-              >
-                <div className=" w-[130px] h-[30px] rounded-full opacity-75 bg-black mix-blend-multiply"></div>
-                <div className=" absolute flex items-center  text-white font-interV text-[12px]">
-                  <AiOutlineLink />
-                  <div className=" ml-2">Permalink</div>
-                </div>
-              </a>
-              <a href={weblink} className=" items-center flex justify-center">
-                <div className=" w-[100px] h-[30px] rounded-full opacity-75 bg-black mix-blend-multiply"></div>
-                <div className=" absolute flex items-center  text-white font-interV text-[12px]">
-                  <AiOutlineGithub />
-                  <div className=" ml-2">Github</div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div className="sm:pt-[70px] relative sm:pl-[70px] pl-5 sm:pr-0 pr-5 grow-1 overflow-y-scroll no-scrollbar w-full">
-            {hasImages ? (
-              <div>
-                {detailimages?.map((detail, index) => (
-                  <div key={index}>
-                    <Image alt="sample" className="w-full" src={detail} />
+        <div className="fixed z-40 w-screen h-screen flex justify-center lg:flex-row flex-col-reverse overflow-y-hidden bg-black">
+          <div className="lg:max-w-[1500px] w-full overflow-x-hidden flex lg:flex-row flex-col-reverse relative overflow-y-hidden">
+            <div className=" absolute z-30 flex lg:ml-[70px] lg:mt-[70px] top-22 lg:top-0 left-5">
+              <div className=" sticky top-0 flex">
+                <a
+                  href={permalink}
+                  className=" items-center mr-3 flex justify-center"
+                >
+                  <div className=" w-[130px] h-[30px] rounded-full opacity-75 bg-black mix-blend-multiply"></div>
+                  <div className=" absolute flex items-center  text-white font-interV text-[12px]">
+                    <AiOutlineLink />
+                    <div className=" ml-2">Permalink</div>
                   </div>
-                ))}
+                </a>
+                <a href={weblink} className=" items-center flex justify-center">
+                  <div className=" w-[100px] h-[30px] rounded-full opacity-75 bg-black mix-blend-multiply"></div>
+                  <div className=" absolute flex items-center  text-white font-interV text-[12px]">
+                    <AiOutlineGithub />
+                    <div className=" ml-2">Github</div>
+                  </div>
+                </a>
               </div>
-            ) : (
-              <div className=" bg-cyan-900 w-full">
-                <div className="opacity-80 w-full bg-black h-4">
-                  <div className="bg-[url('/assets/images/line.png')] h-full w-"></div>
+            </div>
+            <div className="lg:pt-[70px] relative lg:pl-[70px] pl-5 lg:pr-0 pr-5 grow-1 overflow-y-scroll no-scrollbar w-full">
+              {hasImages ? (
+                <div>
+                  {detailimages?.map((detail, index) => (
+                    <div key={index}>
+                      <Image alt="sample" className="w-full" src={detail} />
+                    </div>
+                  ))}
                 </div>
-                <p className=" text-center py-10 text-4xl sm:text-8xl font-montMed text-white font-black ">
-                  MEN AT <span className="text-amber-500">WORK</span>
-                </p>
-                <div className="relative">
-                  <div className="sm:w-[60px] w-[25px] absolute bottom-[30%]  right-[36%]">
-                    <div className="sm:w-[20px]  w-[8px] sm:pl-[10px] pl-[3px] flex">
-                      <Image className="steam sm:h-10 h-5" src={images.steam} />
-                      <Image
-                        className="steam-1 sm:h-10  h-5"
-                        src={images.steam}
-                      />
-                      <Image
-                        className="steam-2 sm:h-10  h-5"
-                        src={images.steam}
-                      />
-                    </div>
-                    <Image className="" src={images.mug} />
+              ) : (
+                <div className=" bg-cyan-900 w-full">
+                  <div className="opacity-80 w-full bg-black h-4">
+                    <div className="bg-[url('/assets/images/line.png')] h-full w-"></div>
                   </div>
-                  <div className="bug sm:w-[50px] w-[20px] h-auto absolute justify-items-center bottom-[35%] left-[10%]">
-                    <Image className="" src={images.bug} />
-                    <div className="sm:w-[30px] w-[12px] sm:-mt-[5px] -mt-[2px] flex justify-between">
-                      <Image
-                        className="legs sm:h-[10px] h-[4px] w-auto"
-                        src={images.bugleg}
-                      />
-                      <Image
-                        className="legs2 sm:h-[10px] h-[4px] w-auto"
-                        src={images.bugleg}
-                      />
-                      <Image
-                        className=" sm:h-[10px] h-[4px]  w-auto legs"
-                        src={images.bugleg2}
-                      />
-                    </div>
-                  </div>
-                  <div className="deadbug sm:w-[50px] w-[20px] rotate-180 absolute bottom-[15%] justify-items-center left-[30%]   ">
-                    <Image className="bug-2" src={images.bug} />
-                    <div className="sm:w-[35px] w-[12px] sm:-mt-[5px] -mt-[2px] flex justify-between">
-                      <Image
-                        className="legs sm:h-[10px] h-[4px] w-auto"
-                        src={images.bugleg}
-                      />
-                      <Image
-                        className="legs2 sm:h-[10px] h-[4px] w-auto"
-                        src={images.bugleg}
-                      />
-                      <Image
-                        className=" sm:h-[10px] h-[4px]  w-auto legs"
-                        src={images.bugleg2}
-                      />
-                    </div>
-                  </div>
+                  <p className=" text-center py-10 text-4xl lg:text-8xl font-montMed text-white font-black ">
+                    MEN AT <span className="text-amber-500">WORK</span>
+                  </p>
                   <div className="relative">
-                    <div className="absolute h-[6px] sm:h-[36px] flex gap-4 sm:gap-12 right-[24%] top-[31%] justify-center items-center ">
-                      <span className="blink sm:w-[14px] w-[2px] h-[6px] sm:h-[35px]  bg-black flex rounded-[50%]"></span>
-                      <span className="blink sm:w-[12px] w-[2px] h-[6px] sm:h-[36px] bg-black flex rounded-[50%]"></span>
+                    <div className="lg:w-[60px] w-[25px] absolute bottom-[30%]  right-[36%]">
+                      <div className="lg:w-[20px]  w-[8px] lg:pl-[10px] pl-[3px] flex">
+                        <Image
+                          className="steam lg:h-10 h-5"
+                          src={images.steam}
+                        />
+                        <Image
+                          className="steam-1 lg:h-10  h-5"
+                          src={images.steam}
+                        />
+                        <Image
+                          className="steam-2 lg:h-10  h-5"
+                          src={images.steam}
+                        />
+                      </div>
+                      <Image className="" src={images.mug} />
                     </div>
-                    <Image className="w-full" src={images.animation} />
+                    <div className="bug lg:w-[50px] w-[20px] h-auto absolute justify-items-center bottom-[35%] left-[10%]">
+                      <Image className="" src={images.bug} />
+                      <div className="lg:w-[30px] w-[12px] lg:-mt-[5px] -mt-[2px] flex justify-between">
+                        <Image
+                          className="legs lg:h-[10px] h-[4px] w-auto"
+                          src={images.bugleg}
+                        />
+                        <Image
+                          className="legs2 lg:h-[10px] h-[4px] w-auto"
+                          src={images.bugleg}
+                        />
+                        <Image
+                          className=" lg:h-[10px] h-[4px]  w-auto legs"
+                          src={images.bugleg2}
+                        />
+                      </div>
+                    </div>
+                    <div className="deadbug lg:w-[50px] w-[20px] rotate-180 absolute bottom-[15%] justify-items-center left-[30%]   ">
+                      <Image className="bug-2" src={images.bug} />
+                      <div className="lg:w-[35px] w-[12px] lg:-mt-[5px] -mt-[2px] flex justify-between">
+                        <Image
+                          className="legs lg:h-[10px] h-[4px] w-auto"
+                          src={images.bugleg}
+                        />
+                        <Image
+                          className="legs2 lg:h-[10px] h-[4px] w-auto"
+                          src={images.bugleg}
+                        />
+                        <Image
+                          className=" lg:h-[10px] h-[4px]  w-auto legs"
+                          src={images.bugleg2}
+                        />
+                      </div>
+                    </div>
+                    <div className="relative">
+                      <div className="absolute h-[6px] lg:h-[36px] flex gap-4 lg:gap-12 right-[24%] top-[31%] justify-center items-center ">
+                        <span className="blink lg:w-[14px] w-[2px] h-[6px] lg:h-[35px]  bg-black flex rounded-[50%]"></span>
+                        <span className="blink lg:w-[12px] w-[2px] h-[6px] lg:h-[36px] bg-black flex rounded-[50%]"></span>
+                      </div>
+                      <Image className="w-full" src={images.animation} />
+                    </div>
+                  </div>
+                  <p className=" text-center py-10 text-2xl lg:text-8xl font-montMed text-white font-black ">
+                    UNDER <span className="text-amber-500">CONSTRUCTION</span>
+                  </p>
+                  <div className="opacity-80 w-full bg-black h-4">
+                    <div className="bg-[url('/assets/images/line.png')] h-full w-"></div>
                   </div>
                 </div>
-                <p className=" text-center py-10 text-2xl sm:text-8xl font-montMed text-white font-black ">
-                  UNDER <span className="text-amber-500">CONSTRUCTION</span>
-                </p>
-                <div className="opacity-80 w-full bg-black h-4">
-                  <div className="bg-[url('/assets/images/line.png')] h-full w-"></div>
-                </div>
-              </div>
-            )}
-            <div className="w-full h-[200px] bg-white"></div>
-          </div>
-          <div className=" grow-0 sm:w-[90px] w-full px-5 sm:px-0 flex  sm:flex-col flex-row-reverse items-center justify-between bg-black">
-            <div
-              onClick={() => setIsOpen(!isOpen)}
-              className=" h-[30px] flex justify-center items-center rounded-full cursor-pointer w-[30px] mt-[20px] mb-[30px] bg-gray-500"
-            >
-              <AiOutlineClose color="white" />
+              )}
+              <div className="w-full h-[200px] bg-white"></div>
             </div>
-            <div className="flex flex-row sm:flex-col justify-between w-[250px]">
-              <div className=" flex flex-col justify-center mt-[30px] items-center">
-                <div className=" flex justify-center items-center p-2 sm:p-4  rounded-full  bg-white">
-                  <AiOutlineUser />
-                </div>
-                <p className=" font-montMed my-1 text-[10px] text-gray-300">
-                  Contact Us
-                </p>
+            <div className=" grow-0 lg:w-[90px] w-full px-5 lg:px-0 flex  lg:flex-col flex-row-reverse items-center justify-between bg-black">
+              <div
+                onClick={() => setIsOpen(!isOpen)}
+                className=" h-[30px] flex justify-center items-center rounded-full cursor-pointer w-[30px] mt-[20px] mb-[30px] bg-gray-500"
+              >
+                <AiOutlineClose color="white" />
               </div>
-              <div className="flex flex-col justify-center mt-[30px] items-center">
-                <div className=" flex justify-center items-center p-2 sm:p-4 rounded-full  bg-white">
-                  <AiOutlineBuild />
+              <div className="flex flex-row lg:flex-col justify-between w-[250px]">
+                <div className=" flex flex-col justify-center mt-[30px] items-center">
+                  <div className=" flex justify-center items-center p-2 lg:p-4  rounded-full  bg-white">
+                    <AiOutlineUser />
+                  </div>
+                  <p className=" font-montMed my-1 text-[10px] text-gray-300">
+                    Contact Us
+                  </p>
                 </div>
-                <p className=" font-montMed my-1 text-[10px] text-gray-300">
-                  Tools
-                </p>
-              </div>
-              <div className=" flex flex-col justify-center mt-[30px] items-center">
-                <div className=" flex justify-center items-center p-2 sm:p-4 rounded-full  bg-white">
-                  <AiOutlineShareAlt />
+                <div className="flex flex-col justify-center mt-[30px] items-center">
+                  <div className=" flex justify-center items-center p-2 lg:p-4 rounded-full  bg-white">
+                    <AiOutlineBuild />
+                  </div>
+                  <p className=" font-montMed my-1 text-[10px] text-gray-300">
+                    Tools
+                  </p>
                 </div>
-                <p className="  font-montMed my-1 text-[10px] text-gray-300">
-                  Share
-                </p>
-              </div>
-              <div className=" flex flex-col justify-center mt-[30px] items-center">
-                <div className=" flex justify-center items-center p-2 sm:p-4 rounded-full  bg-white">
-                  <AiOutlineHeart />
+                <div className=" flex flex-col justify-center mt-[30px] items-center">
+                  <div className=" flex justify-center items-center p-2 lg:p-4 rounded-full  bg-white">
+                    <AiOutlineShareAlt />
+                  </div>
+                  <p className="  font-montMed my-1 text-[10px] text-gray-300">
+                    Share
+                  </p>
                 </div>
-                <p className="  font-montMed my-1 text-[10px] text-gray-300">
-                  Like
-                </p>
-              </div>
-              <div className=" flex flex-col justify-center mt-[30px] items-center">
-                <div className=" flex justify-center items-center p-2 sm:p-4 rounded-full  bg-white">
-                  <AiOutlineWechatWork />
+                <div className=" flex flex-col justify-center mt-[30px] items-center">
+                  <div className=" flex justify-center items-center p-2 lg:p-4 rounded-full  bg-white">
+                    <AiOutlineHeart />
+                  </div>
+                  <p className="  font-montMed my-1 text-[10px] text-gray-300">
+                    Like
+                  </p>
                 </div>
-                <p className="  font-montMed my-1 text-[10px] text-gray-300">
-                  Comment
-                </p>
+                <div className=" flex flex-col justify-center mt-[30px] items-center">
+                  <div className=" flex justify-center items-center p-2 lg:p-4 rounded-full  bg-white">
+                    <AiOutlineWechatWork />
+                  </div>
+                  <p className="  font-montMed my-1 text-[10px] text-gray-300">
+                    Comment
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -370,39 +375,39 @@ const Projects = () => {
       ) : (
         <div></div>
       )}
-      <div className="flex  sm:flex-row flex-col text-gray-600 font-normal justify-between mr-15 h-screen w-full">
+      <div className="flex lg:flex-row flex-col text-gray-600 font-normal mr-15 h-screen w-full lg:justify-center">
         {/**Menu */}
-        <div className=" relative sm:border-r-[2px] sm:border-b-0 border-b-2 border-gray-200 bg-white dark:bg-black dark:border-gray-700 h-screen w-screen block sm:w-[350px]">
-          <div className=" pt-8 sm:pt-[10dvh] fixed z-30 pb-2 w-full sm:w-[280px]  sm:pl-20 pl-5 bg-white dark:bg-black">
+        <div className=" relative lg:border-r-[2px] lg:border-b-0 border-b-2 border-gray-200 bg-white dark:bg-black dark:border-gray-700 h-screen w-screen block lg:w-[350px]">
+          <div className=" pt-8 lg:pt-[10dvh] fixed z-30 pb-2 w-full lg:w-[280px]  lg:pl-20 pl-5 bg-white dark:bg-black">
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className=" sm:w-[100px] w-[60px] h-[140px] -mt-18   cursor-pointer absolute sm:right-[32%] right-[20%] z-50"
+              className=" lg:w-[100px] w-[60px] h-[140px] -mt-18   cursor-pointer absolute lg:right-[32%] right-[20%] z-50"
             ></button>
             {/**lamp */}
-            <div className="sm:w-full  w-[200px]  sm:h-[210px] h-[150px] overflow-x-clip  absolute -z-50 top-0 sm:left-0 right-0">
+            <div className="lg:w-full  w-[200px]  lg:h-[210px] h-[150px] overflow-x-clip  absolute -z-50 top-0 lg:left-0 right-0">
               <div className=" relative h-full justify-items-center ">
-                <div className=" flex sm:h-full h-[110px] w-full overflow-clip relative">
-                  <div className="w-[300px] bottom-0 origin-bottom-right -left-[300px] absolute sm:rotate-45 rotate-55 z-10 h-[350px] bg-white sm:bg-LtBackground dark:bg-black flex"></div>
-                  <div className="w-[300px] bottom-0 origin-bottom-left -right-[300px] sm:-rotate-45 -rotate-55 absolute z-10   h-[350px] bg-white sm:bg-LtBackground dark:bg-black flex"></div>
+                <div className=" flex lg:h-full h-[110px] w-full overflow-clip relative">
+                  <div className="w-[300px] bottom-0 origin-bottom-right -left-[300px] absolute lg:rotate-45 rotate-55 z-10 h-[350px] bg-white lg:bg-LtBackground dark:bg-black flex"></div>
+                  <div className="w-[300px] bottom-0 origin-bottom-left -right-[300px] lg:-rotate-45 -rotate-55 absolute z-10   h-[350px] bg-white lg:bg-LtBackground dark:bg-black flex"></div>
                 </div>
-                <div className="absolute h-[80px] top-0 sm:h-[120px] z-5 w-[180px] bg-gray-600"></div>
-                <div className="sm:h-[140px] absolute top-0 h-[89px] sm:w-[40px] w-[20px] bg-amber-300 dark:bg-gray-800 dark:border-gray-700 dark:border-[2px] flex rounded-b-full "></div>
+                <div className="absolute h-[80px] top-0 lg:h-[120px] z-5 w-[180px] bg-gray-600"></div>
+                <div className="lg:h-[140px] absolute top-0 h-[89px] lg:w-[40px] w-[20px] bg-amber-300 dark:bg-gray-800 dark:border-gray-700 dark:border-[2px] flex rounded-b-full "></div>
 
-                <div className="sm:w-[200px] w-[120px] h-[120px] -z-10 absolute top-0 sm:h-[200px] rounded-full bg-amber-100 dark:bg-transparent blur-[40px] sm:blur-[100px]"></div>
+                <div className="lg:w-[200px] w-[120px] h-[120px] -z-10 absolute top-0 lg:h-[200px] rounded-full bg-amber-100 dark:bg-transparent blur-[40px] lg:blur-[100px]"></div>
               </div>
               <div className="block absolute top-0 z-20  w-full justify-items-center">
-                <span className="h-[32px] sm:h-[59px] flex w-[3px] bg-gray-600"></span>
-                <span className="sm:w-[14px] w-[10px] h-[12px] sm:h-[20px] flex rounded-t-md bg-gray-400"></span>
+                <span className="h-[32px] lg:h-[59px] flex w-[3px] bg-gray-600"></span>
+                <span className="lg:w-[14px] w-[10px] h-[12px] lg:h-[20px] flex rounded-t-md bg-gray-400"></span>
               </div>
             </div>
 
-            <div className="w-full sm:h-[120px] h-[0px]   "></div>
+            <div className="w-full lg:h-[120px] h-[0px]   "></div>
             {defaultBt.map((btn, i) => (
               <MenuBtns prop={btn} key={i} />
             ))}
           </div>
           {/**Projects btn */}
-          <div className="sm:pl-[90px] text-gray-600 pl-8 pt-24 sm:pt-[270px]">
+          <div className="lg:pl-[90px] text-gray-600 pl-8 pt-24 lg:pt-[270px]">
             <p className=" mt-8 mb-4 font-interV text-gray-600 dark:text-white font-semibold">
               All Projects
             </p>
@@ -412,7 +417,7 @@ const Projects = () => {
           </div>
         </div>
         {/**Projects */}
-        <div className="w-full px-8 pb-[80px] relative bg-LtBackground sm:overflow-y-scroll pt-[10dvh]  dark:bg-black">
+        <div className="w-full px-8 pb-[80px] lg:max-w-[1450px] relative bg-LtBackground lg:overflow-y-scroll pt-[10dvh]  dark:bg-black">
           <div id="web">
             <div className="sticky top-0 z-10 backdrop-blur-[50px]  py-4 px-8">
               <p className=" text-2xl font-inter font-semibold dark:text-white text-gray-600">
@@ -436,7 +441,7 @@ const Projects = () => {
                 </button>
               </div>
             </div>
-            <div className="my-[5dvh] gap-[2rem] justify-items-center grid grid-cols-1 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+            <div className="my-[5dvh] gap-[2rem] justify-items-center grid grid-cols-1  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4">
               {webData.map((web, index) => (
                 <SecCard web={web} key={index} />
               ))}
@@ -466,7 +471,7 @@ const Projects = () => {
               </div>
             </div>
 
-            <div className="my-[5dvh] gap-[2rem] justify-items-center grid grid-cols-1 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+            <div className="my-[5dvh] gap-[2rem] justify-items-center grid grid-cols-1  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4">
               {mobileAppData.map((web, index) => (
                 <SecCard web={web} key={index} />
               ))}
@@ -497,7 +502,7 @@ const Projects = () => {
               </div>
             </div>
 
-            <div className="my-[5dvh] gap-[2rem] justify-items-center grid grid-cols-1 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+            <div className="my-[5dvh] gap-[2rem] justify-items-center grid grid-cols-1  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4">
               {CloneWebData.map((web, index) => (
                 <SecCard web={web} key={index} />
               ))}
@@ -526,7 +531,7 @@ const Projects = () => {
                 </a>
               </div>
             </div>
-            <div className="my-[5dvh] gap-[2rem] justify-items-center grid grid-cols-1 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+            <div className="my-[5dvh] gap-[2rem] justify-items-center grid grid-cols-1  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:grid-cols-4">
               {OtherData.map((web, index) => (
                 <SecCard web={web} key={index} />
               ))}
@@ -543,9 +548,9 @@ export default Projects;
 
 export const MenuBtns = ({ prop }) => {
   return (
-    <div className="sm:mb-2 pr-2">
+    <div className="lg:mb-2 pr-2">
       <a
-        className="hover:bg-bgExlight dark:hover:bg-gray-800 dark:text-gray-100 dark:hover:text-gray-100 sm:w-full hover:text-primary text-gray-600  items-center px-[10px] py-[8px] rounded-[10px]  inline-flex"
+        className="hover:bg-bgExlight dark:hover:bg-gray-800 dark:text-gray-100 dark:hover:text-gray-100 lg:w-full hover:text-primary text-gray-600  items-center px-[10px] py-[8px] rounded-[10px]  inline-flex"
         href={prop.href}
       >
         {prop.icons}
