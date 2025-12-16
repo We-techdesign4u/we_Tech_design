@@ -2,17 +2,11 @@
 import React, { useState, useEffect, useActionState } from "react";
 import Link from "next/link";
 import {
-  AiOutlinePhone,
-  AiOutlineMail,
-  AiTwotoneHighlight,
-  AiFillHome,
-  AiOutlineHome,
   AiOutlineCheckCircle,
   AiOutlineArrowRight,
   AiFillGithub,
   AiFillLinkedin,
   AiFillWechat,
-  AiOutlineMenu,
   AiOutlineMenuUnfold,
   AiOutlineMenuFold,
 } from "react-icons/ai";
@@ -144,9 +138,9 @@ const ContactUs = () => {
                       justify-between"
           >
             <div className="flex w-full lg:w-auto justify-between">
-              <a href="/" className="text-[20px] font-bricolage">
+              <Link href="/" className="text-[20px] font-bricolage">
                 We-Tech.design
-              </a>
+              </Link>
 
               <button
                 onClick={() => setIsOpen((prev) => !prev)}
