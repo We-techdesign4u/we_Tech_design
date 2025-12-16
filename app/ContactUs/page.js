@@ -244,6 +244,7 @@ const ContactUs = () => {
         >
           <div>
             <Image
+              alt="bug"
               className=" h-[8rem] w-[8rem] object-cover rounded-full bg-black border-8 border-white shadow-md shadow-purple-200 "
               src={images.bug}
             />
@@ -617,6 +618,7 @@ const ContactUs = () => {
                     className="inline-flex w-[150px]  h-[100px] border-[1px] border-gray-100 justify-center items-center"
                   >
                     <Image
+                      alt="icons"
                       className=" grayscale-100 opacity-40 h-[2rem] w-auto mr-1"
                       src={stack.icon}
                     />

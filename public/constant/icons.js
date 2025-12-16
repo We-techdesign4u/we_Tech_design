@@ -8,7 +8,7 @@ import css from "../assets/icons/css.png";
 import expo from "../assets/icons/expo.svg";
 import figma from "../assets/icons/Figma.png";
 import firebase from "../assets/icons/firebase.png";
-import framer from "../assets/icons/framerr.png";
+import framer from "../assets/icons/Framerr.png";
 import github from "../assets/icons/github.png";
 import indesign from "../assets/icons/indesign.png";
 import livecycle from "../assets/icons/Livecycle.png";

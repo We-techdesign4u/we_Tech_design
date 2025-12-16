@@ -254,19 +254,22 @@ const Projects = () => {
                     <div className="lg:w-[60px] w-[25px] absolute bottom-[30%]  right-[36%]">
                       <div className="lg:w-[20px]  w-[8px] lg:pl-[10px] pl-[3px] flex">
                         <Image
+                          alt="steam"
                           className="steam lg:h-10 h-5"
                           src={images.steam}
                         />
                         <Image
+                          alt="steam2"
                           className="steam-1 lg:h-10  h-5"
                           src={images.steam}
                         />
                         <Image
+                          alt="steam3"
                           className="steam-2 lg:h-10  h-5"
                           src={images.steam}
                         />
                       </div>
-                      <Image className="" src={images.mug} />
+                      <Image alt="mug" className="" src={images.mug} />
                     </div>
                     <div className="bug lg:w-[50px] w-[20px] h-auto absolute justify-items-center bottom-[35%] left-[10%]">
                       <Image className="" src={images.bug} />

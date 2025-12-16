@@ -5,5 +5,4 @@ export { default as MobileCards } from "./mobileCard";
 export { default as Formfield } from "./formfield";
 export { default as Animation } from "./Animation";
 export { default as GDButton } from "./GDButton";
-
-export { default as RotatingWord } from "./Rotatingword";
+export { default as RotatingWord } from "./RotatingWord";
