@@ -561,8 +561,11 @@ const ContactUs = () => {
                         strokeWidth="3"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        initial={{ pathLength: 0 }}
-                        animate={{ pathLength: [0, 0, 1, 0] }}
+                        initial={{ pathLength: 0, opacity: 0 }}
+                        animate={{
+                          pathLength: [0, 0, 1, 0],
+                          opacity: [0, 1, 1, 0],
+                        }}
                         transition={{
                           duration,
                           times: [0, 0.6, 0.85, 1],
@@ -865,61 +868,3 @@ const ContactUs = () => {
 };
 
 export default ContactUs;
-
-const lineVariants = {
-  hidden: { pathLength: 0 },
-  visible: (i) => ({
-    pathLength: 1,
-    transition: {
-      duration: 0.4,
-      delay: i * 0.3,
-      ease: "easeInOut",
-    },
-  }),
-  exit: (i) => ({
-    pathLength: 0,
-    transition: {
-      duration: 0.4,
-      delay: (3 - i) * 0.3,
-      ease: "easeInOut",
-    },
-  }),
-};
-
-export function SequentialLines() {
-  const [phase, setPhase] = useState("draw");
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPhase((p) => (p === "draw" ? "erase" : "draw"));
-    }, 4000); // total cycle time
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const lines = [45.15, 63.39, 81.62, 99.86];
-
-  return (
-    <motion.svg
-      viewBox="0 0 156.65 130.04"
-      className="w-40 h-auto text-gray-700"
-    >
-      {lines.map((y, i) => (
-        <motion.line
-          key={i}
-          custom={i}
-          x1="15.85"
-          y1={y}
-          x2={i === 3 ? 92.51 : 140.07}
-          y2={y}
-          stroke="currentColor"
-          strokeWidth={3}
-          strokeLinecap="round"
-          variants={lineVariants}
-          initial="hidden"
-          animate={phase === "draw" ? "visible" : "exit"}
-        />
-      ))}
-    </motion.svg>
-  );
-}
