@@ -4,6 +4,7 @@ import GetlinkedWeb from "../assets/images/GetlinkedWeb.jpg";
 import Getlinkedm from "../assets/images/getlinkedm.png";
 import Samaan from "../assets/images/Samaan.jpg";
 import Projects from "../assets/images/Projects.png";
+import profile from "../assets/images/profile.jpg";
 
 import aeSamaan from "../assets/images/aesamaan.jpg";
 import Takapuna from "../assets/images/Takapuna.jpg";
@@ -55,8 +56,10 @@ import twitter3 from "../assets/images/twitter3.jpg";
 import twitter4 from "../assets/images/twitter4.jpg";
 import twitter5 from "../assets/images/twitter5.jpg";
 import twitter1 from "../assets/images/twitter1.jpg";
+import aboutbg from "../assets/images/aboutbg.png";
 
 export default {
+  aboutbg,
   twitter1,
   twitter2,
   twitter3,
@@ -113,4 +116,5 @@ export default {
   logoblack,
   line,
   plate,
+  profile,
 };

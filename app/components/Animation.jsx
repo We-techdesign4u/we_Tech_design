@@ -5,7 +5,7 @@ import { easeInOut, motion } from "framer-motion";
 export default function Animation() {
   const nameisLetters = "nameis".split("");
   const nameis = "nameis".split("");
-  const ganiyu = "Ganiyu".split("");
+  const ganiyu = "Oladapo".split("");
 
   return (
     <div className="flex h-screen w-screen items-center justify-center bg-[url(/assets/images/bg3.png)] bg-cover bg-center bg-no-repeat font-extrabold text-6xl lg:overflow-hidden">

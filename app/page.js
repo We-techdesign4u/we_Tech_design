@@ -4,7 +4,7 @@ import { images } from "../public/constant";
 import Link from "next/link";
 
 import { useEffect, useState } from "react";
-import { Animation, GDButton } from "./components";
+import { Animation, GDButton, SecButton } from "./components";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -30,11 +30,11 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-[url(/assets/images/bg3.png)] lg:overflow-hidden bg-center bg-cover bg-no-repeat m-0 p-0">
+    <div className="bg-[url(/assets/images/bg3.png)] lg:overflow-x-hidden bg-center bg-cover bg-no-repeat m-0 p-0">
       {playAnimation && <Animation />}
       {showLanding && (
         <div className="flex flex-col-reverse lg:flex-row lg:h-[100vh] w-screen justify-center">
-          <div className="w-screen overflow-hidden  lg:w-auto lg:max-w-[800px] pt-[4dvh] lg:pt-[10dvh] pl-5 pr-5 lg:pl-[20dvh] pb-[3dvh] flex flex-row justify-center items-end lg:h-[100vh] ">
+          <div className="w-screen overflow-hidden  lg:w-auto lg:max-w-[800px] pt-[0.5dvh] lg:pt-[10dvh] pl-5 pr-5 lg:pl-[20dvh] pb-[3dvh] flex flex-row justify-center items-end lg:h-[100vh] ">
             <motion.div
               initial={{ y: 30 }}
               animate={{ y: [30, 0], opacity: [0, 1] }}
@@ -45,7 +45,7 @@ export default function Home() {
               <div className="w-full flex justify-center lg:justify-start">
                 <a href="http://">
                   <Image
-                    className="h-[12dvh] w-auto"
+                    className="h-[7dvh] w-auto"
                     src={images.logoblack}
                     alt="logo"
                   />
@@ -53,15 +53,15 @@ export default function Home() {
               </div>
 
               {/*welcome */}
-              <div className="p-0 w-full justify-center lg:justify-start flex flex-row">
+              <div className="w-full  justify-center lg:justify-start flex flex-row">
                 <div>
-                  <p className="text-gray-800 lg:text-[15dvh] text-[8dvh] lg:leading-[15dvh] leading-[10dvh]  font-montHair">
+                  <p className="text-gray-800 lg:text-[70px] xl:text-[100px] text-[69px] lg:leading-[15dvh]  leading-[10dvh]  font-montHair">
                     Welc
                   </p>
                 </div>
                 <div
                   // class="anicenter"
-                  className=" relative lg:w-[10vh] lg:h-[15vh] h-[10vh] w-[7vh] flex float-left items-end"
+                  className=" relative lg:w-[50px] lg:h-[100px] xl:h-[110px] xl:w-[70px] h-[10vh] w-[55px] flex float-left items-end"
                 >
                   <svg class="artwork" viewBox="0 0 91.12 91.12">
                     <g style={{ isolation: "isolate" }}>
@@ -175,39 +175,41 @@ export default function Home() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-gray-800 lg:text-[15dvh] text-[8dvh] leading-[10dvh] lg:leading-[15dvh] font-montHair">
+                  <p className="text-gray-800 lg:text-[70px] xl:text-[100px] text-[69px] leading-[10dvh] lg:leading-[15dvh] font-montHair">
                     me
                   </p>
                 </div>
               </div>
               {/*about */}
-              <div className="lg:w-[87dvh] w-full pt-5">
-                <p className=" text-gray-800 text-center lg:text-left font-bricolage pt-11 pb-4 font-bold text-5xl">
-                  I'm Gani
+              <div className="lg:w-[87dvh]  w-full pt-5">
+                <p className=" text-gray-800 text-center lg:text-left font-bricolage lg:pt-6 xl:pt-11  pb-4 font-bold text-5xl">
+                  I’m Oladapo
                 </p>
-                <p className="lg:text-left text-gray-800 text-center text-[18px] font-bricolage">
-                  A Frontend Developer & Graphic Designer <br></br>8+ years in
-                  design, 1+ years building fast web & mobile apps. <br></br>One
-                  person who can design it, code it, and ship it.
+                <p className="lg:text-left lg:max-w-[420px] text-gray-800 text-center text-[18px] font-bricolage">
+                  A self-taught frontend developer & graphic designer. 8+ years
+                  experience in design , 1+ year building fast web and mobile
+                  apps.
+                  <br></br>One person who can design, code, and ship it.
                 </p>
               </div>
               {/*buttons */}
               <div className="flex flex-row gap-3 lg:justify-start justify-center">
-                <GDButton
+                <SecButton
                   title={"Projects..."}
                   withicon={"false"}
                   url={"/Projects"}
                 />
-                <GDButton
-                  title={"Contact Us"}
+                <SecButton
+                  title={"About Me"}
                   withicon={"false"}
                   url={"/ContactUs"}
                 />
               </div>
+
               {/*icons */}
               <div className="w-full lg:justify-start justify-center flex">
                 <div className="w-[130px] flex h-[30px] my-[30px] items-center box-border justify-between">
-                  <a href="https://github.com/">
+                  <a href="www.github.com/We-techdesign4u">
                     <svg
                       className=" hover:fill-[#5534bf] fill-[#866ae3] "
                       height="17"
@@ -217,7 +219,7 @@ export default function Home() {
                       <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
                     </svg>
                   </a>
-                  <a href="https://www.linkedin.com/in/">
+                  <a href="https://www.linkedin.com/in/ganiyu-olowookere-9396b193">
                     <svg
                       className=" hover:fill-[#5534bf] fill-[#866ae3] "
                       height="17"
@@ -227,7 +229,7 @@ export default function Home() {
                       <path d="M32,0a2.56,2.56,0,0,1,1.84.74,2.39,2.39,0,0,1,.75,1.77V32.34a2.31,2.31,0,0,1-.75,1.75,2.54,2.54,0,0,1-1.8.72H2.55a2.5,2.5,0,0,1-1.79-.72A2.29,2.29,0,0,1,0,32.34V2.51A2.36,2.36,0,0,1,.76.74,2.52,2.52,0,0,1,2.59,0H32ZM10,10.52a2.59,2.59,0,0,0,.79-1.95A2.62,2.62,0,0,0,10,6.62a3,3,0,0,0-2.11-.77,3,3,0,0,0-2.13.77,2.57,2.57,0,0,0-.82,2,2.59,2.59,0,0,0,.8,1.95,2.83,2.83,0,0,0,2.07.78h0A3,3,0,0,0,10,10.52Zm.47,2.93H5.29V29.16H10.5Zm18.82,6.68a7.62,7.62,0,0,0-1.71-5.33,5.58,5.58,0,0,0-4.3-1.71,5.56,5.56,0,0,0-3.14.87,6.2,6.2,0,0,0-1.55,1.71V13.45H13.41c0,.61,0,3.4,0,8.39v7.32h5.21V20.37a3.77,3.77,0,0,1,.16-1.27,3.25,3.25,0,0,1,.95-1.32,2.68,2.68,0,0,1,1.75-.59,2.3,2.3,0,0,1,2,1,4.62,4.62,0,0,1,.6,2.55v8.43h5.21Z" />
                     </svg>
                   </a>
-                  <a href="https://twitter.com/">
+                  <a href="https://x.com/Mr_deepee">
                     <svg
                       className=" hover:fill-[#5534bf] fill-[#866ae3] "
                       height="17"
@@ -237,22 +239,12 @@ export default function Home() {
                       <path d="M31.27,7.08V8A20.83,20.83,0,0,1,30,15.16a21.38,21.38,0,0,1-3.9,6.52,19.46,19.46,0,0,1-6.37,4.78A20.76,20.76,0,0,1,11,28.29a20.26,20.26,0,0,1-5.81-.84A19.61,19.61,0,0,1,0,25.1a16.06,16.06,0,0,0,1.71.08,14.19,14.19,0,0,0,4.73-.79,14.76,14.76,0,0,0,4.14-2.23,7.16,7.16,0,0,1-4.14-1.45,6.9,6.9,0,0,1-2.5-3.52,7,7,0,0,0,1.31.12,7.32,7.32,0,0,0,1.87-.24,6.93,6.93,0,0,1-2.9-1.34,7,7,0,0,1-2-2.5,7.56,7.56,0,0,1-.78-3.16V10a6.81,6.81,0,0,0,3.26.91A7.17,7.17,0,0,1,2.33,8.29a7,7,0,0,1-.86-3.4,7.09,7.09,0,0,1,1-3.58A20.33,20.33,0,0,0,8.91,6.56a20.13,20.13,0,0,0,8.24,2.23A8,8,0,0,1,17,7.16a7,7,0,0,1,1-3.58A7.26,7.26,0,0,1,20.55,1,7.06,7.06,0,0,1,27,.6a6.87,6.87,0,0,1,2.35,1.67A14,14,0,0,0,33.86.52,7,7,0,0,1,32.64,2.8a7.47,7.47,0,0,1-1.93,1.7,14.46,14.46,0,0,0,4.14-1.16A15,15,0,0,1,31.27,7.08Z" />
                     </svg>
                   </a>
-                  <Link href="">
-                    <svg
-                      className=" hover:fill-[#5534bf] fill-[#866ae3] "
-                      height="17"
-                      width="17"
-                      viewBox="0 0 39.78 27.25"
-                    >
-                      <path d="M39.78,8V21A6.94,6.94,0,0,1,39,24.15,5.79,5.79,0,0,1,36.8,26.4a6.15,6.15,0,0,1-3.14.81q-13.29.08-27.45,0A6.33,6.33,0,0,1,3,26.4,5.89,5.89,0,0,1,.8,24.17,6.31,6.31,0,0,1,0,21V8l5.09,2.18,6.13,2.71q3.66,1.59,6.18,2.65a6.32,6.32,0,0,0,5.16-.1L39,8.27ZM19.85,0H36.32a3.47,3.47,0,0,1,2.57.9,3.41,3.41,0,0,1,.89,2.52,1,1,0,0,1-.16.62,1.26,1.26,0,0,1-.51.38L21.64,12a4.27,4.27,0,0,1-3.66,0Q7.08,7.2.64,4.34A1,1,0,0,1,.24,4,1,1,0,0,1,0,3.46,3.23,3.23,0,0,1,.86.92,3.35,3.35,0,0,1,3.38,0Z" />
-                    </svg>
-                  </Link>
                 </div>
               </div>
             </motion.div>
           </div>
           {/**images */}
-          <div className="  w-full lg:max-w-[900px] relative overflow-clip h-[400px] lg:h-full -mr-[12dvh] lg:mask-none mask-b-from-20% mask-b-to-90% ">
+          <div className="  w-full lg:max-w-[900px] relative overflow-clip h-[500px] lg:h-full -mr-[12dvh] lg:mask-none mask-b-from-60% mask-b-to-98% ">
             <div className=" lg:-mt-[70px] -mt-14 lg:-ml-0 ml-[50px] flex overflow-clip -rotate-28 lg:w-[990px] w-full  absolute ">
               <motion.div
                 initial={{ x: 800 }}
@@ -306,7 +298,7 @@ export default function Home() {
                 <div className="lg:h-[500px] lg:w-[225px] mt-17 mb-[12px] overflow-clip">
                   <Image alt="Samaan" className=" " src={images.Samaan} />
                 </div>
-                <div className="h-[450px] lg:w-[225px] bg-blue-700"></div>
+                <div className="h-[450px] lg:w-[225px] bg-[url(/assets/images/cake.jpg)] bg-contain bg-no-repeat"></div>
               </motion.div>
             </div>
           </div>

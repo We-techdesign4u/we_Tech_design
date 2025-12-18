@@ -6,3 +6,4 @@ export { default as Formfield } from "./formfield";
 export { default as Animation } from "./Animation";
 export { default as GDButton } from "./GDButton";
 export { default as RotatingWord } from "./RotatingWord";
+export { default as SecButton } from "./SecButton";
