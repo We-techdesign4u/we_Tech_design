@@ -9,6 +9,9 @@ import {
   AiFillWechat,
   AiOutlineMenuUnfold,
   AiOutlineMenuFold,
+  AiOutlineMoon,
+  AiOutlineSun,
+  AiOutlineLaptop,
 } from "react-icons/ai";
 
 import { Formfield } from "../components";
@@ -54,6 +57,7 @@ const itemVariants = {
 };
 const ContactUs = () => {
   const { theme, setTheme } = useTheme();
+
   const stackArray = [
     { title: "HTML", secondText: "", icon: icons.html },
     { title: "CSS", secondText: "", icon: icons.css },
@@ -130,7 +134,7 @@ const ContactUs = () => {
   }, [state]);
 
   return (
-    <div className="w-screen overflow-x-hidden pt-[50px] bg-none dark:bg-[#231f20] ">
+    <div className="w-screen overflow-x-hidden pt-[50px] bg-none dark:bg-black ">
       <div className=" w-full justify-items-center ">
         {/**Nav */}
         <div className="fixed z-50 w-full lg:max-w-[1500px] px-3 lg:px-[220px]">
@@ -184,52 +188,51 @@ const ContactUs = () => {
             </div>
 
             {/* 🔹 Mobile Menu (ANIMATED) */}
-            <AnimatePresence>
-              {isOpen && (
-                <motion.div
-                  key="mobile-menu"
-                  variants={menuVariants}
-                  initial="closed"
-                  animate="open"
-                  exit="closed"
-                  className="lg:hidden overflow-hidden flex flex-col pt-5
+
+            {isOpen && (
+              <motion.div
+                key="mobile-menu"
+                variants={menuVariants}
+                initial="closed"
+                animate="open"
+                exit="closed"
+                className="lg:hidden overflow-hidden flex flex-col pt-5
                          font-interV text-[13px]
                          text-gray-600 dark:text-gray-200 font-semibold"
-                >
-                  <ul className="flex flex-col gap-4">
-                    {links.map((item) => (
-                      <motion.li key={item.label} variants={itemVariants}>
-                        <a
-                          href={item.href}
-                          onClick={() => setIsOpen(false)}
-                          className="block py-1 "
-                        >
-                          {item.label}
-                        </a>
-                      </motion.li>
-                    ))}
-
-                    <motion.li variants={itemVariants} className="flex">
+              >
+                <ul className="flex flex-col gap-4">
+                  {links.map((item) => (
+                    <motion.li key={item.label} variants={itemVariants}>
                       <a
-                        href="https://calendar.app.google/ARzxk9SenHu5mAQA7"
+                        href={item.href}
                         onClick={() => setIsOpen(false)}
-                        className="px-3 py-2 flex items-center gap-2
-                               border border-gray-300 rounded-[10px]
-                               font-bold bg-gray-100"
+                        className="block py-1 "
                       >
-                        Book a call
-                        <Image
-                          src={icons.googlemeet}
-                          alt="Google Meet"
-                          width={24}
-                          height={24}
-                        />
+                        {item.label}
                       </a>
                     </motion.li>
-                  </ul>
-                </motion.div>
-              )}
-            </AnimatePresence>
+                  ))}
+
+                  <motion.li variants={itemVariants} className="flex">
+                    <a
+                      href="https://calendar.app.google/ARzxk9SenHu5mAQA7"
+                      onClick={() => setIsOpen(false)}
+                      className="px-3 py-2 flex items-center gap-2
+                               border border-gray-300 rounded-[10px]
+                               font-bold bg-gray-100 dark:text-gray-600"
+                    >
+                      Book a call
+                      <Image
+                        src={icons.googlemeet}
+                        alt="Google Meet"
+                        width={24}
+                        height={24}
+                      />
+                    </a>
+                  </motion.li>
+                </ul>
+              </motion.div>
+            )}
           </div>
         </div>
 
@@ -315,7 +318,7 @@ const ContactUs = () => {
           </motion.div>
         </div>
         {/**Achievement */}
-        <div className="bg-[#f0f0f0] dark:border-[1px] dark:border-gray-500 dark:bg-[#231f20] w-full justify-items-center lg:px-[220px] py-20">
+        <div className="bg-[#f0f0f0] dark:border-y-[1px] px-5 dark:border-gray-500 dark:bg-black w-full justify-items-center lg:px-[220px] py-20">
           <div className="w-full lg:max-w-[1100px]">
             <div className="text-center dark:text-gray-200">
               <p className="font-bricolage pb-3 font-bold text-[1.8rem]">
@@ -334,7 +337,7 @@ const ContactUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="w-[330px] py-12 h-[200px] flex flex-col justify-center border-[1px] dark:border-gray-500 border-gray-300 dark:bg-[#272727]  rounded-[35px]"
+                className="lg:w-[330px] w-full py-6 flex flex-col justify-center border-[1px] dark:border-gray-500 border-gray-300 dark:bg-gray-900 rounded-[35px]"
               >
                 <div className=" w-full flex justify-center ">
                   <motion.svg
@@ -409,6 +412,7 @@ const ContactUs = () => {
                     <path
                       d="M41.44,14.44A4.41,4.41,0,1,1,45.85,10,4.42,4.42,0,0,1,41.44,14.44Zm0-5.82A1.41,1.41,0,1,0,42.85,10,1.42,1.42,0,0,0,41.44,8.62Z"
                       fill="#494949"
+                      className="dark:fill-gray-900"
                     />
 
                     {/* PEN */}
@@ -429,7 +433,7 @@ const ContactUs = () => {
                       <path
                         d="M46.56,45.16H36.33l-4.94-6.94L39,21.13h.93V31.84a3.35,3.35,0,1,0,4.86,3,3.33,3.33,0,0,0-1.86-3V21.13h.94L51.5,38.22Z"
                         fill="#fff"
-                        className="dark:fill-gray-800"
+                        className="dark:fill-gray-900"
                       />
                       <rect
                         x="35.18"
@@ -458,7 +462,7 @@ const ContactUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="w-[330px] py-12 h-[200px] flex flex-col justify-center border-[1px] dark:border-gray-500 border-gray-300 dark:bg-[#272727]  rounded-[35px]"
+                className="lg:w-[330px] w-full py-6 flex flex-col justify-center border-[1px] dark:border-gray-500 border-gray-300 dark:bg-gray-900 rounded-[35px]"
               >
                 <div className=" w-full flex justify-center ">
                   <motion.svg
@@ -555,7 +559,7 @@ const ContactUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="w-[330px] py-12 h-[200px] flex flex-col justify-center border-[1px] dark:border-gray-500 border-gray-300 dark:bg-[#272727]  rounded-[35px]"
+                className="lg:w-[330px] w-full py-6 flex flex-col justify-center border-[1px] dark:border-gray-500 border-gray-300 dark:bg-gray-900 rounded-[35px]"
               >
                 <div className=" w-full flex justify-center ">
                   <motion.svg
@@ -663,7 +667,7 @@ const ContactUs = () => {
           id="stack"
           className="bg-[LtBackground] w-full justify-items-center lg:px-[220px] py-20"
         >
-          <div className="w-full px-5 lg:max-w-[1500px] dark:bg-[#231f20]">
+          <div className="w-full px-5 lg:max-w-[1500px] dark:bg-black">
             <div className="text-center justify-items-center dark:text-gray-200">
               <p className="font-bricolage pb-3 font-bold text-[1.8rem]">
                 My Stack ...
@@ -679,14 +683,14 @@ const ContactUs = () => {
                 {stackArray.map((stack, i) => (
                   <span
                     key={i}
-                    className=" dark:border-gray-600 inline-flex w-[150px] h-[100px] border-[1px] dark:bg-[#272727] border-gray-100 justify-center items-center"
+                    className=" dark:border-gray-800 inline-flex w-[150px] h-[100px] border-[1px] dark:bg-gray-900 border-gray-100 px-5 items-center"
                   >
                     <Image
                       alt="icons"
-                      className=" grayscale-100 dark:grayscale-100 dark:opacity-60 opacity-40 h-[2rem] w-auto mr-1"
+                      className=" grayscale-100 dark:grayscale-0  opacity-80 dark:opacity-100 h-[2rem] w-[2rem] object-contain mr-2 "
                       src={stack.icon}
                     />
-                    <p className="font-interV leading-[14px] text-[13px] text-gray-400 dark:text-gray-100 ">
+                    <p className="font-interV leading-[14px] text-[13px] text-gray-600 dark:text-gray-100 ">
                       {stack.title}
                       <br></br>
                       {stack.secondText}
@@ -701,9 +705,9 @@ const ContactUs = () => {
         {/**projects */}
         <div
           id="projects"
-          className="bg-[#f0f0f0] dark:bg-[#231f20] dark:border-[1px] dark:border-gray-500 w-full justify-items-center px-5 lg:px-[160px] py-20"
+          className="bg-[#f0f0f0] dark:bg-black dark:border-y-[1px] dark:border-gray-500 w-full justify-items-center px-5 lg:px-[160px] py-20"
         >
-          <div className="w-full lg:max-w-[1300px] px-7 justify-items-center">
+          <div className="w-full lg:max-w-[1300px] justify-items-center">
             <div className="text-center dark:text-gray-200">
               <p className="font-bricolage pb-3 font-bold text-[1.8rem]">
                 Featured Projects ...
@@ -721,12 +725,12 @@ const ContactUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="w-[350px] h-[383px] border-[1px] border-gray-300 bg-white dark:bg-[#272727] dark:border-gray-500 rounded-[35px]"
+                className="lg:w-[350px] w-full  h-[396px] border-[1px] border-gray-300 bg-white dark:bg-gray-900 dark:border-gray-500 rounded-[35px]"
               >
-                <div className="w-full bg-gray-100 h-[280px] flex justify-center items-center  rounded-[36px]">
+                <div className="w-full bg-gray-100 dark:bg-gray-900 h-[280px] flex justify-center items-center  rounded-[36px]">
                   <div className=" w-full flex justify-center h-full">
                     <Image
-                      className="object-cover p-[6px] dark:bg-[#272727] rounded-[36px] object-top"
+                      className="object-cover p-[6px] dark:bg-gray-800 rounded-[36px] object-top"
                       src={images.cake}
                     />
                   </div>
@@ -750,12 +754,12 @@ const ContactUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="w-[350px] h-[383px] border-[1px] border-gray-300 bg-white dark:bg-[#272727] dark:border-gray-500 rounded-[35px]"
+                className="lg:w-[350px] w-full  h-[396px] border-[1px] border-gray-300 bg-white dark:bg-gray-900 dark:border-gray-500 rounded-[35px]"
               >
-                <div className="w-full bg-gray-100 h-[280px] flex justify-center items-center  rounded-[36px]">
+                <div className="w-full bg-gray-100 dark:bg-gray-900 h-[280px] flex justify-center items-center  rounded-[36px]">
                   <div className=" w-full flex justify-center h-full">
                     <Image
-                      className="object-cover p-[6px] dark:bg-[#272727] rounded-[36px] object-top"
+                      className="object-cover p-[6px] dark:bg-gray-800 rounded-[36px] object-top"
                       src={images.realEstate1}
                     />
                   </div>
@@ -777,12 +781,12 @@ const ContactUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, ease: "easeInOut" }}
-                className="w-[350px] h-[383px] dark:bg-[#272727] border-[1px] border-gray-300 dark:border-gray-500 bg-white rounded-[35px]"
+                className="lg:w-[350px] w-full  h-[396px] border-[1px] border-gray-300 bg-white dark:bg-gray-900 dark:border-gray-500 rounded-[35px]"
               >
-                <div className="w-full bg-gray-100 h-[280px] flex justify-center items-center  rounded-[36px]">
+                <div className="w-full bg-gray-100 dark:bg-gray-900 h-[280px] flex justify-center items-center  rounded-[36px]">
                   <div className=" w-full flex justify-center h-full">
                     <Image
-                      className="object-cover p-[6px] dark:bg-[#272727] rounded-[36px] object-top"
+                      className="object-cover p-[6px] dark:bg-gray-800 rounded-[36px] object-top"
                       src={images.GetlinkedWeb}
                     />
                   </div>
@@ -814,7 +818,7 @@ const ContactUs = () => {
         {/**Get intouch */}
         <div
           id="getintouch"
-          className="bg-LtBackground  dark:bg-[#231f20] w-full justify-items-center px-5 lg:px-[220px] pt-20 lg:py-20"
+          className="bg-LtBackground  dark:bg-black w-full justify-items-center px-5 lg:px-[220px] pt-20 lg:py-20"
         >
           <div className="w-full lg:max-w-[1000px] justify-items-center">
             <div className="text-center dark:text-gray-200">
@@ -877,8 +881,8 @@ const ContactUs = () => {
               </div>
               {/**form */}
               <div className="lg:w-[50%] w-full">
-                <div className=" w-full bg-gray-100 dark:bg-[#272727] dark:border-[1px] dark:border-gray-500 rounded-[35px]">
-                  <form action={formAction} className="p-[20px]">
+                <div className=" w-full bg-gray-100 dark:bg-gray-900 dark:border-[1px] dark:border-gray-500 rounded-[35px]">
+                  <form action={formAction} className="lg:p-[20px] px-2 py-3">
                     <div className="lg:flex ">
                       <div className="lg:w-[50%]">
                         <Formfield
@@ -958,12 +962,27 @@ const ContactUs = () => {
         </div>
 
         {/**old */}
-        <div className="w-screen lg:px-20 px-5 py-7 dark:border-gray-500 dark:border-[1px] dark:bg-[#231f20] justify-items-center  bg-[#ebebeb] ">
+        <div className="w-screen lg:px-20 px-5 py-7 dark:border-gray-500 dark:border-y-[1px] dark:bg-black justify-items-center  bg-[#ebebeb] ">
           <div className="w-full lg:max-w-[1500px] dark:text-gray-200 flex lg:flex-row flex-col items-center justify-between ">
-            <p className="font-interV text-[14px]">
-              © 2025 We-Tech.Design All rights reserved
-            </p>
-
+            <div className="gap-y-2 gap-x-3 lg:items-start justify-center items-center flex flex-col  ">
+              <div class="inline-grid grid-cols-2 gap-0.5 rounded-full bg-gray-950/5 p-0.75 text-gray-950 dark:bg-gray-700 dark:text-white w-fit h-fit">
+                <span
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  class="rounded-full p-1 *:size-5 cursor-pointer bg-white dark:bg-gray-700"
+                >
+                  <AiOutlineSun />
+                </span>
+                <span
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  class="rounded-full p-1 *:size-5 cursor-pointer bg-none dark:bg-gray-900"
+                >
+                  <AiOutlineMoon />
+                </span>
+              </div>
+              <p className="font-interV text-center text-[14px]">
+                © 2025 We-Tech.Design All rights reserved
+              </p>
+            </div>
             <Link href="/" className="py-7 w-[130px] lg:py-0">
               <div className="bg-[url(/assets/images/logoblack.png)] dark:bg-[url(/assets/images/logowhite.png)] bg-contain bg-no-repeat w-[120px] h-[40px] flex "></div>
             </Link>
