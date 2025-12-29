@@ -51,16 +51,16 @@ const SecCard = ({ web }) => {
         </p>
       </div>
       <div className="p-3 font-Bricolage text-xs">
-        <div className="pb-2 gap-x-1 flex">
+        <div className="pb-2 gap-x-1 flex  ">
           {web.Tools?.map((tool, i) => (
             <span
               key={i}
-              className="py-1 rounded-full px-3 text-primary dark:text-gray-300 bg-bgExlight dark:bg-gray-700"
+              className="py-1 rounded-full text-[9px] px-3 text-primary dark:text-gray-300 bg-bgExlight dark:bg-gray-700"
             >
               {tool}
             </span>
           ))}
-          <span className="py-1 rounded-full px-3 bg-gray-200 dark:bg-gray-800 dark:text-gray-300">
+          <span className="py-1 rounded-full px-3 text-[9px] bg-gray-200 dark:bg-gray-800 dark:text-gray-300">
             +{web.More} more
           </span>
         </div>

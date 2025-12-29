@@ -61,7 +61,7 @@ export default function Home() {
               {/*welcome */}
               <div className="w-full  justify-center lg:justify-start flex flex-row">
                 <div>
-                  <p className="text-gray-800 lg:text-[70px] xl:text-[100px] text-[69px] lg:leading-[15dvh]  leading-[10dvh]  font-montHair">
+                  <p className="text-gray-800 lg:text-[70px] xl:text-[100px] text-[60px] lg:leading-[15dvh]  leading-[10dvh]  font-montHair">
                     Welc
                   </p>
                 </div>
@@ -181,7 +181,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-gray-800 lg:text-[70px] xl:text-[100px] text-[69px] leading-[10dvh] lg:leading-[15dvh] font-montHair">
+                  <p className="text-gray-800 lg:text-[70px] xl:text-[100px] text-[60px] leading-[10dvh] lg:leading-[15dvh] font-montHair">
                     me
                   </p>
                 </div>

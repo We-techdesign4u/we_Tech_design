@@ -12,13 +12,13 @@ const SecButton = ({
 }) => {
   return (
     <div className="py-10 flex ">
-      <div className="shadow-xl relative cursor-pointer drop-shadow-xl shadow-[#00000074] overflow-clip dark:shadow-[#00000074] flex justify-center items-center h-[45px] border-[0.5px] border-gray-400  rounded-full bg-linear-to-b from-30% via-60% from-[#494949] via-[#393939] to-[#272727] font-interV font-semibold ">
+      <div className="shadow-xl relative cursor-pointer drop-shadow-xl shadow-[#00000074] overflow-clip dark:shadow-[#00000074] flex justify-center items-center h-[45px] border-t-[0.5px] border-gray-400  rounded-full bg-linear-to-b from-30% via-60% from-[#494949] via-[#393939] to-[#272727] font-interV font-semibold ">
         <div className="absolute flex -z-10 h-14 w-[230px] rounded-[50%]  from-purple-400 via-purple-600 to-purple-900 to-30%  bg-radial-[at_50%_50%] -top-8 blur-[15px]"></div>
         {type == "submit" ? (
           <button
             type={type}
             disabled={disabled}
-            className=" flex justify-center items-center  text-white px-8   font-interV font-semibold "
+            className=" flex justify-center items-center text-[13px] text-white px-8   font-interV font-semibold "
           >
             {title}
             {withicon == "true" ? (
@@ -34,7 +34,7 @@ const SecButton = ({
             href={url}
             type={type}
             disabled={disabled}
-            className=" flex justify-center items-center  text-white px-8   font-interV font-semibold "
+            className=" flex justify-center items-center text-[13px]  text-white px-8   font-interV font-semibold "
           >
             {title}
             {withicon == "true" ? (

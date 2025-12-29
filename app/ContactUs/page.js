@@ -25,8 +25,6 @@ import { RotatingWord } from "../components";
 import { sendContactEmail } from "../actions/sendEmail";
 import { useTheme } from "next-themes";
 
-// Optional: Show a toast or scroll to message after submission
-
 const menuVariants = {
   closed: {
     height: 0,
@@ -128,8 +126,6 @@ const ContactUs = () => {
   const [state, formAction, pending] = useActionState(sendContactEmail, null);
   useEffect(() => {
     if (state?.success) {
-      // You could reset the form here if desired
-      // document.querySelector('form')?.reset();
     }
   }, [state]);
 
@@ -273,7 +269,7 @@ const ContactUs = () => {
                 <span className="lg:text-[1.6rem] text-[14px] lg:leading-12 font-interV flex font-bold text-center">
                   8+ Years in Graphic Design, 1+ year building fast & beautiful
                 </span>
-                <div className=" text-gray-700 bg-gray-200 px-2 py-1 ml-2 lg:my-0 my-3 rounded-md justify-center flex w-fit ">
+                <div className=" text-gray-200 border-t-[2px] border-gray-950 bg-gray-800 shadow-[inset_0px_0px_13px_6px_rgba(255,255,255,0.10),0_10px_15px_0px_rgba(0,0,0,0.45)] px-2 py-1 ml-2 lg:my-0 my-3 rounded-[10px] justify-center flex w-fit ">
                   <AnimatePresence mode="wait">
                     <motion.span
                       key={index}
@@ -318,7 +314,7 @@ const ContactUs = () => {
           </motion.div>
         </div>
         {/**Achievement */}
-        <div className="bg-[#f0f0f0] dark:border-y-[1px] px-5 dark:border-gray-500 dark:bg-black w-full justify-items-center lg:px-[220px] py-20">
+        <div className="bg-[#f0f0f0] dark:border-y-[1px] px-5 dark:border-gray-500 dark:bg-black w-full justify-items-center lg:px-[220px] md:px-[150px] py-20">
           <div className="w-full lg:max-w-[1100px]">
             <div className="text-center dark:text-gray-200">
               <p className="font-bricolage pb-3 font-bold text-[1.8rem]">
@@ -665,7 +661,7 @@ const ContactUs = () => {
         {/**stack */}
         <div
           id="stack"
-          className="bg-[LtBackground] w-full justify-items-center lg:px-[220px] py-20"
+          className="bg-[LtBackground] w-full justify-items-center md:px-[150px] lg:px-[220px] py-20"
         >
           <div className="w-full px-5 lg:max-w-[1500px] dark:bg-black">
             <div className="text-center justify-items-center dark:text-gray-200">
@@ -679,7 +675,7 @@ const ContactUs = () => {
               <p className="font-interV text-[17px]"></p>
             </div>
             <div className="pt-10 h-auto  justify-items-center w-full">
-              <div className="grid lg:grid-cols-7 grid-cols-2 md:grid-cols-4   ">
+              <div className="grid lg:grid-cols-7 grid-cols-2 md:grid-cols-3   ">
                 {stackArray.map((stack, i) => (
                   <span
                     key={i}
@@ -705,7 +701,7 @@ const ContactUs = () => {
         {/**projects */}
         <div
           id="projects"
-          className="bg-[#f0f0f0] dark:bg-black dark:border-y-[1px] dark:border-gray-500 w-full justify-items-center px-5 lg:px-[160px] py-20"
+          className="bg-[#f0f0f0] dark:bg-black dark:border-y-[1px] dark:border-gray-500 w-full justify-items-center px-5 md:px-[150px] lg:px-[160px] py-20"
         >
           <div className="w-full lg:max-w-[1300px] justify-items-center">
             <div className="text-center dark:text-gray-200">
@@ -818,7 +814,7 @@ const ContactUs = () => {
         {/**Get intouch */}
         <div
           id="getintouch"
-          className="bg-LtBackground  dark:bg-black w-full justify-items-center px-5 lg:px-[220px] pt-20 lg:py-20"
+          className="bg-LtBackground  dark:bg-black w-full md:px-[150px] justify-items-center px-5 lg:px-[220px] pt-20 lg:py-20"
         >
           <div className="w-full lg:max-w-[1000px] justify-items-center">
             <div className="text-center dark:text-gray-200">
