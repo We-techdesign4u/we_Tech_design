@@ -57,8 +57,14 @@ import twitter4 from "../assets/images/twitter4.jpg";
 import twitter5 from "../assets/images/twitter5.jpg";
 import twitter1 from "../assets/images/twitter1.jpg";
 import aboutbg from "../assets/images/aboutbg.png";
+import work from "../assets/images/work.png";
+import swing from "../assets/images/swing.svg";
+import crane from "../assets/images/crane.png";
 
 export default {
+  work,
+  swing,
+  crane,
   aboutbg,
   twitter1,
   twitter2,

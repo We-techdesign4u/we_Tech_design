@@ -20,10 +20,11 @@ import {
   AiOutlineCodeSandbox,
 } from "react-icons/ai";
 
-import { SecCard } from "../components";
+import { MenAtWork, SecCard } from "../components";
 
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const {
@@ -259,83 +260,129 @@ const Projects = () => {
                   ))}
                 </div>
               ) : (
-                <div className=" bg-cyan-900 w-full">
-                  <div className="opacity-80 w-full bg-black h-4">
-                    <div className="bg-[url('/assets/images/line.png')] h-full w-"></div>
-                  </div>
-                  <p className=" text-center py-10 text-4xl lg:text-8xl font-montMed text-white font-black ">
-                    MEN AT <span className="text-amber-500">WORK</span>
-                  </p>
-                  <div className="relative">
-                    <div className="lg:w-[60px] w-[25px] absolute bottom-[30%]  right-[36%]">
-                      <div className="lg:w-[20px]  w-[8px] lg:pl-[10px] pl-[3px] flex">
-                        <Image
-                          alt="steam"
-                          className="steam lg:h-10 h-5"
-                          src={images.steam}
-                        />
-                        <Image
-                          alt="steam2"
-                          className="steam-1 lg:h-10  h-5"
-                          src={images.steam}
-                        />
-                        <Image
-                          alt="steam3"
-                          className="steam-2 lg:h-10  h-5"
-                          src={images.steam}
-                        />
-                      </div>
-                      <Image alt="mug" className="" src={images.mug} />
-                    </div>
-                    <div className="bug lg:w-[50px] w-[20px] h-auto absolute justify-items-center bottom-[35%] left-[10%]">
-                      <Image className="" src={images.bug} />
-                      <div className="lg:w-[30px] w-[12px] lg:-mt-[5px] -mt-[2px] flex justify-between">
-                        <Image
-                          className="legs lg:h-[10px] h-[4px] w-auto"
-                          src={images.bugleg}
-                        />
-                        <Image
-                          className="legs2 lg:h-[10px] h-[4px] w-auto"
-                          src={images.bugleg}
-                        />
-                        <Image
-                          className=" lg:h-[10px] h-[4px]  w-auto legs"
-                          src={images.bugleg2}
-                        />
-                      </div>
-                    </div>
-                    <div className="deadbug lg:w-[50px] w-[20px] rotate-180 absolute bottom-[15%] justify-items-center left-[30%]   ">
-                      <Image className="bug-2" src={images.bug} />
-                      <div className="lg:w-[35px] w-[12px] lg:-mt-[5px] -mt-[2px] flex justify-between">
-                        <Image
-                          className="legs lg:h-[10px] h-[4px] w-auto"
-                          src={images.bugleg}
-                        />
-                        <Image
-                          className="legs2 lg:h-[10px] h-[4px] w-auto"
-                          src={images.bugleg}
-                        />
-                        <Image
-                          className=" lg:h-[10px] h-[4px]  w-auto legs"
-                          src={images.bugleg2}
-                        />
-                      </div>
-                    </div>
-                    <div className="relative">
-                      <div className="absolute h-[6px] lg:h-[36px] flex gap-4 lg:gap-12 right-[24%] top-[31%] justify-center items-center ">
-                        <span className="blink lg:w-[14px] w-[2px] h-[6px] lg:h-[35px]  bg-black flex rounded-[50%]"></span>
-                        <span className="blink lg:w-[12px] w-[2px] h-[6px] lg:h-[36px] bg-black flex rounded-[50%]"></span>
-                      </div>
-                      <Image className="w-full" src={images.animation} />
-                    </div>
-                  </div>
-                  <p className=" text-center py-10 text-2xl lg:text-8xl font-montMed text-white font-black ">
-                    UNDER <span className="text-amber-500">CONSTRUCTION</span>
-                  </p>
-                  <div className="opacity-80 w-full bg-black h-4">
-                    <div className="bg-[url('/assets/images/line.png')] h-full w-"></div>
-                  </div>
+                <div className="w-full relative  flex justify-center">
+                  {/* Background */}
+                  <Image
+                    className="object-contain w-[100%] md:w-[60%] "
+                    src={images.work}
+                    alt=""
+                  />
+
+                  {/* Crane container (moves forward & back) */}
+                  <motion.div
+                    className="absolute top-[28%] w-[50%] md:w-[30%] md:right-[25%] right-[15%]"
+                    animate={{ x: [-30, 30, -30] }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    {/* Crane body */}
+                    <Image
+                      className="w-full object-contain"
+                      src={images.crane}
+                      alt=""
+                    />
+
+                    {/* Swing (rotates from top center) */}
+                    <motion.div
+                      className="absolute top-0 right-[70%] w-[60%]"
+                      style={{ transformOrigin: "50% 0%" }}
+                      animate={{ rotate: [-15, 15, -15] }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <Image
+                        className="w-full object-contain"
+                        src={images.swing}
+                        alt=""
+                      />
+                    </motion.div>
+                  </motion.div>
                 </div>
+                // <div className=" bg-cyan-900 w-full">
+                //   <div className="opacity-80 w-full bg-black h-4">
+                //     <div className="bg-[url('/assets/images/line.png')] h-full w-"></div>
+                //   </div>
+                //   <p className=" text-center py-10 text-4xl lg:text-8xl font-montMed text-white font-black ">
+                //     MEN AT <span className="text-amber-500">WORK</span>
+                //   </p>
+                //   <div className="relative">
+                //     <div className="lg:w-[60px] w-[25px] absolute bottom-[30%]  right-[36%]">
+                //       <div className="lg:w-[20px]  w-[8px] lg:pl-[10px] pl-[3px] flex">
+                //         <Image
+                //           alt="steam"
+                //           className="steam lg:h-10 h-5"
+                //           src={images.steam}
+                //         />
+                //         <Image
+                //           alt="steam2"
+                //           className="steam-1 lg:h-10  h-5"
+                //           src={images.steam}
+                //         />
+                //         <Image
+                //           alt="steam3"
+                //           className="steam-2 lg:h-10  h-5"
+                //           src={images.steam}
+                //         />
+                //       </div>
+                //       <Image alt="mug" className="" src={images.mug} />
+                //     </div>
+                //     <div className="bug lg:w-[50px] w-[20px] h-auto absolute justify-items-center bottom-[35%] left-[10%]">
+                //       <Image className="" src={images.bug} />
+                //       <div className="lg:w-[30px] w-[12px] lg:-mt-[5px] -mt-[2px] flex justify-between">
+                //         <Image
+                //           className="legs lg:h-[10px] h-[4px] w-auto"
+                //           src={images.bugleg}
+                //         />
+                //         <Image
+                //           className="legs2 lg:h-[10px] h-[4px] w-auto"
+                //           src={images.bugleg}
+                //         />
+                //         <Image
+                //           className=" lg:h-[10px] h-[4px]  w-auto legs"
+                //           src={images.bugleg2}
+                //         />
+                //       </div>
+                //     </div>
+                //     <div className="deadbug lg:w-[50px] w-[20px] rotate-180 absolute bottom-[15%] justify-items-center left-[30%]   ">
+                //       <Image className="bug-2" src={images.bug} />
+                //       <div className="lg:w-[35px] w-[12px] lg:-mt-[5px] -mt-[2px] flex justify-between">
+                //         <Image
+                //           className="legs lg:h-[10px] h-[4px] w-auto"
+                //           src={images.bugleg}
+                //         />
+                //         <Image
+                //           className="legs2 lg:h-[10px] h-[4px] w-auto"
+                //           src={images.bugleg}
+                //         />
+                //         <Image
+                //           className=" lg:h-[10px] h-[4px]  w-auto legs"
+                //           src={images.bugleg2}
+                //         />
+                //       </div>
+                //     </div>
+                //     <div className="relative">
+                //       <div className="absolute h-[6px] lg:h-[36px] flex gap-4 lg:gap-12 right-[24%] top-[31%] justify-center items-center ">
+                //         <span className="blink lg:w-[14px] w-[2px] h-[6px] lg:h-[35px]  bg-black flex rounded-[50%]"></span>
+                //         <span className="blink lg:w-[12px] w-[2px] h-[6px] lg:h-[36px] bg-black flex rounded-[50%]"></span>
+                //       </div>
+                //       <Image className="w-full" src={images.animation} />
+                //     </div>
+                //   </div>
+                //   <p className=" text-center py-10 text-2xl lg:text-8xl font-montMed text-white font-black ">
+                //     UNDER <span className="text-amber-500">CONSTRUCTION</span>
+                //   </p>
+                //   <div className="opacity-80 w-full bg-black h-4">
+                //     <div className="bg-[url('/assets/images/line.png')] h-full w-"></div>
+                //   </div>
+                // </div>
+
+                // <MenAtWork />
               )}
             </div>
             <div className=" grow-0 lg:w-[90px] w-full px-5 lg:px-0 flex  lg:flex-col flex-row-reverse items-center justify-between bg-black">

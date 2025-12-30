@@ -7,3 +7,7 @@ export { default as Animation } from "./Animation";
 export { default as GDButton } from "./GDButton";
 export { default as RotatingWord } from "./RotatingWord";
 export { default as SecButton } from "./SecButton";
+
+// export { default as SecMenatWork } from "./secMenatWork";
+
+export { default as MenAtWork } from "./MenAtWork";
