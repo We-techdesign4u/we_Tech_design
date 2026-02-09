@@ -67,7 +67,7 @@ export default function Home() {
                 </div>
                 <div
                   // class="anicenter"
-                  className=" relative lg:w-[50px] lg:h-[100px] xl:h-[110px] xl:w-[70px] h-[10vh] w-[55px] flex float-left items-end"
+                  className="  relative lg:w-[50px] lg:h-[100px] xl:h-[110px] xl:w-[70px] h-[8.5vh] w-[45px] flex float-left items-end"
                 >
                   <svg class="artwork" viewBox="0 0 91.12 91.12">
                     <g style={{ isolation: "isolate" }}>

@@ -60,8 +60,21 @@ import aboutbg from "../assets/images/aboutbg.png";
 import work from "../assets/images/work.png";
 import swing from "../assets/images/swing.svg";
 import crane from "../assets/images/crane.png";
+import framer from "../assets/images/framer1.jpg";
+import framer1 from "../assets/images/framer1.jpg";
+import framer2 from "../assets/images/framer2.jpg";
+import framer3 from "../assets/images/framer3.jpg";
+import framer4 from "../assets/images/framer4.jpg";
+import framer5 from "../assets/images/framer5.jpg";
 
 export default {
+  framer,
+  framer1,
+  framer3,
+  framer2,
+  framer4,
+  framer5,
+
   work,
   swing,
   crane,
